@@ -52,7 +52,7 @@ const SignUp = () => {
       // Simulate an API call
       setTimeout(() => {
         setIsSubmitting(false)
-        router.replace('/home')
+        router.replace('/chats')
       }, 1000)
     }
   }

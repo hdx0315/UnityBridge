@@ -1,28 +1,43 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { View, Text, Image } from 'react-native'
+import React from 'react'
+import { Tabs, Redirect} from 'expo-router'
+import { icons} from '../../constants';
+import {StatusBar} from 'expo-status-bar'
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+const TabIcon = ({icon, color, name, focused}) => {
+  return(
+    <View className="items-center justify-center gap-2">
+      <Image
+        source={icon}
+        resizeMode='contain'
+        tintColor={color}
+        className='w-6 h-6'
+      />
+      <Text className={`${focused? 'font-psemibold': 'font-pregular'} text-xs`} style={{color:color}}>
+        {name}
+      </Text>
+    </View>
+  )
+  
+}
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const TabsLayout = () => {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarShowLabel: false,
-        tabBarActiveTintColor: '#FFA001',
-        tabBarInactiveTintColor: '#CDCDE0',
-        tabBarStyle:{
-          backgroundColor: '#161622',
-          borderTopWidth: 1,
-          borderTopColor: "#232533",
-          height: 84
-        }
-      }}
-    >
-      <Tabs.Screen
+    <>
+      <Tabs
+        screenOptions={{
+          tabBarShowLabel: false,
+          tabBarActiveTintColor: '#00FF1E',
+          tabBarInactiveTintColor: '#CDCDE0',
+          tabBarStyle:{
+            backgroundColor: '#052e16',
+            borderTopWidth: 1,
+            borderTopColor: "#232533",
+            height: 60
+          }
+        }}
+      >
+        <Tabs.Screen
           name='chats'
           options={{
             title: 'Chats',
@@ -31,7 +46,7 @@ export default function TabLayout() {
               <TabIcon
                 icon={icons.home}
                 color={color}
-                name="Home"
+                name="Chats"
                 focused={focused}
               />
             ),
@@ -46,13 +61,21 @@ export default function TabLayout() {
               <TabIcon
                 icon={icons.bookmark}
                 color={color}
-                name="Bookmark"
+                name="Calls"
                 focused={focused}
               />
             ),
           }}
         />
-      />
-    </Tabs>
-  );
+      </Tabs>
+
+      
+      <StatusBar
+          backgroundColor="#052e16"
+          style='light'
+        />
+    </>
+  )
 }
+
+export default TabsLayout
