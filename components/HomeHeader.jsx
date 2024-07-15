@@ -20,10 +20,32 @@ const HomeHeader = () => {
             />
           </MenuTrigger>
 
-          <MenuOptions>
+          <MenuOptions customStyles={{
+            optionsContainer:{
+              borderRadius:10,
+              borderCurve: 'continuous',
+              marginTop:10,
+              marginLeft:-20,
+              backgroundColor: '#15803d',
+              shadowOpacity: 0.3,
+              
+            },
+
+            optionText:{
+              fontSize:10,
+              fontWeight:'bold',
+            },
+
+            optionWrapper:{
+              borderRadius:10,
+              borderBottomWidth:2,
+              borderColor: '#22c55e',
+              padding:10
+            }
+          }}>
             <MenuOption 
                 onSelect={() => router.push('settings/profile')} 
-                className="bg-green-700"
+                
             >
                 <Text className="text-white text-lg">
                     Profile
@@ -31,17 +53,17 @@ const HomeHeader = () => {
             </MenuOption>
 
             <MenuOption 
-                onSelect={() => router.push('settings/settings')} 
-                className="bg-green-700"
+                onSelect={() => router.push('settings/appSettings')} 
+                
             >
-                <Text className="text-white text-lg">
+                <Text className="text-white bg-green-700 text-lg">
                     Settings
                 </Text>
             </MenuOption>
 
             <MenuOption 
                 onSelect={() => router.push('settings/search')} 
-                className="bg-green-700"
+                
             >
                 <Text className="text-white text-lg">
                     Search

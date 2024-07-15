@@ -3,7 +3,7 @@ import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Entry from '../../components/Entry';
 import HomeHeader from '../../components/HomeHeader';
-import { MenuProvider } from 'react-native-popup-menu';
+import { images } from '../../constants';
 
 const Chats = () => {
   return (
@@ -14,13 +14,13 @@ const Chats = () => {
         </View>
         <ScrollView className="flex-1 bg-bprimary">
           <Entry 
-            profilePic="logo"
+            profilePic={images.profile}
             name="Chat 01"
             msgPrev="message preview 01"
             timestamp="04.16"
           />
           <Entry 
-            profilePic="logo"
+            profilePic={images.profile}
             name="Chat 02"
             msgPrev="message preview 02"
             timestamp="05.20"

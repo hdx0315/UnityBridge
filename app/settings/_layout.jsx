@@ -3,10 +3,16 @@ import React from 'react'
 import { Stack } from 'expo-router'
 import {StatusBar} from 'expo-status-bar'
 
-const AuthLayout = () => {
+const SettingsLayout = () => {
   return (
     <>
       <Stack>
+        <Stack.Screen
+          name='profile'
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name='appSettings'
           options={{
@@ -28,4 +34,4 @@ const AuthLayout = () => {
   )
 }
 
-export default AuthLayout
+export default SettingsLayout
