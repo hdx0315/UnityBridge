@@ -1,8 +1,9 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import ChatEntry from '../../components/callEntry'
-import { icons } from '../../constants'
+import Entry from '../../components/chatEntry'
+import Header from '../../components/Header'
+import { ScrollView } from 'react-native'
 
 const calls = () => {
   return (
@@ -11,36 +12,29 @@ const calls = () => {
 
           <View>
 
-            <View className="flex-row  bg-primary justify-center items-center">
-
-              <Text className=" pl-4 pt-4 pb-4 text-xl font-pbold text-white">
-                Unity Chats
-              </Text>
-              
-              <Image
-                source={icons.menu}
-                className="w-6 h-6 ml-auto mr-2"
-                resizeMode="contain"
-              />
-              
-            </View>
+          <Header
+            title="Calls"
+          />
 
           {/*
-          -------Chat Entries
-          load all chatheads from db and map them
+          -------Call Entries
+          load all calls from db and map them
           */}
-          <CallEntry
-            profilePic=""
-            name=""
-            clType="" //missed , outgoing , incoming
-            timestamp=""
-          />
-          <CallEntry
-            profilePic=""
-            name=""
-            clType=""
-            timestamp=""
-          />
+          <ScrollView className="min-h-full bg-bprimary">
+            <Entry
+              profilePic="path"
+              name="Call Name 01"
+              clType="outgoing" //missed , outgoing , incoming
+              timestamp="12.15"
+            />
+            <Entry
+              profilePic="path"
+              name="Call name 02"
+              clType="incoming"
+              timestamp="8.07"
+            />
+          </ScrollView>
+
         </View>
       </SafeAreaView>
     </>

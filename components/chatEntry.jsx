@@ -1,18 +1,30 @@
-import { View, Text , Image} from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { images } from '../constants'
 
-const ChatEntry = () => {
+const ChatEntry = ({ profilePic, name, msgPrev, timestamp }) => {
   return (
-    <View className="pt-2 pb-2 flex-row items-center border-b-2 border-green-300">
+    <View className="pt-2 pb-2 flex-row items-center border-b-2 border-green-800 bg-bprimary-100">
       <Image
         source={images.logo}
-        resizeMode='contain'
-        className="w-[50] h-[50] ml-2"
+        resizeMode="contain"
+        className="w-[50px] h-[50px] ml-2"
       />
-      <Text className="ml-2 text-lg font-psemibold">
-        Chat Name
-      </Text>
+
+      <View className="flex-1 flex-col ml-2">
+        <Text className="text-lg text-white font-psemibold">
+          {name}
+        </Text>
+        <Text className="text-sm text-gray-400 ml-2">
+          {msgPrev}
+        </Text>
+      </View>
+
+      <View className="ml-auto pr-2">
+        <Text className="text-sm text-gray-400">
+          {timestamp}
+        </Text>
+      </View>
     </View>
   )
 }
