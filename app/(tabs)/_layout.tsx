@@ -3,6 +3,7 @@ import React from 'react'
 import { Tabs, Stack, Redirect} from 'expo-router'
 import { icons} from '../../constants';
 import {StatusBar} from 'expo-status-bar'
+import { MenuProvider } from 'react-native-popup-menu';
 
 const TabIcon = ({icon, color, name, focused}) => {
   return(
@@ -24,7 +25,7 @@ const TabIcon = ({icon, color, name, focused}) => {
 const TabsLayout = () => {
   return (
     <>
-    
+    <MenuProvider>
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
@@ -76,6 +77,7 @@ const TabsLayout = () => {
           backgroundColor="#052e16"
           style='light'
         />
+        </MenuProvider>
     </>
   )
 }

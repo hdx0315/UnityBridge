@@ -1,44 +1,34 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import Entry from '../../components/chatEntry'
-import Header from '../../components/Header'
-import { ScrollView } from 'react-native'
+import { View, Text, ScrollView } from 'react-native';
+import React from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Entry from '../../components/Entry';
+import HomeHeader from '../../components/HomeHeader';
+import { MenuProvider } from 'react-native-popup-menu';
 
-const calls = () => {
+const Calls = () => {
   return (
-    <>
-      <SafeAreaView>
-
-          <View>
-
-          <Header
-            title="Calls"
-          />
-
-          {/*
-          -------Call Entries
-          load all calls from db and map them
-          */}
-          <ScrollView className="min-h-full bg-bprimary">
-            <Entry
-              profilePic="path"
-              name="Call Name 01"
-              clType="outgoing" //missed , outgoing , incoming
-              timestamp="12.15"
-            />
-            <Entry
-              profilePic="path"
-              name="Call name 02"
-              clType="incoming"
-              timestamp="8.07"
-            />
-          </ScrollView>
-
+    <SafeAreaView className="flex-1">
+      {/* <MenuProvider> */}
+        <View>
+          <HomeHeader />
         </View>
-      </SafeAreaView>
-    </>
-  )
+        <ScrollView className="min-h-full bg-bprimary">
+          <Entry
+            profilePic="path"
+            name="Call Name 01"
+            clType="outgoing" //missed , outgoing , incoming
+            timestamp="12.15"
+          />
+          <Entry
+            profilePic="path"
+            name="Call name 02"
+            clType="incoming"
+            timestamp="8.07"
+          />
+        </ScrollView>
+      {/* </MenuProvider> */}
+    </SafeAreaView>
+  );
 }
 
-export default calls
+export default Calls
