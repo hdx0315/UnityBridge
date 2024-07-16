@@ -67,7 +67,7 @@ const SignUp = () => {
             className="w-[100px] h-[100px]"
           />
 
-          <Text className="text-2xl text-white text-semibold mt-2 font-psemibold">
+          <Text className="text-2xl text-white text-semibold mt-2 font-psemibold mb-8">
             Sign Up to UnityBridge
           </Text>
 
@@ -76,7 +76,7 @@ const SignUp = () => {
             value={form.username}
             placeholder="Enter your Username"
             handleChangeText={(e) => setForm({ ...form, username: e })}
-            otherStyles="mt-7"
+            otherStyles=""
           />
           {errors.username ? <Text className="text-green-500 mt-1">{errors.username}</Text> : null}
 
@@ -85,7 +85,7 @@ const SignUp = () => {
             value={form.email}
             placeholder="Enter your email"
             handleChangeText={(e) => setForm({ ...form, email: e })}
-            otherStyles="mt-7"
+            otherStyles=""
             keyboardType="email-address"
           />
           {errors.email ? <Text className="text-green-500 mt-1">{errors.email}</Text> : null}
@@ -95,14 +95,14 @@ const SignUp = () => {
             value={form.password}
             placeholder="Enter your password"
             handleChangeText={(e) => setForm({ ...form, password: e })}
-            otherStyles="mt-7"
+            otherStyles=""
           />
           {errors.password ? <Text className="text-green-500 mt-1">{errors.password}</Text> : null}
 
           <CustomButton
             title="Register"
             handlePress={submit}
-            containerStyles="w-full mt-7"
+            containerStyles="w-full"
             textStyles="text-black font-psemibold"
             isLoading={isSubmitting}
           />

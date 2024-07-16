@@ -59,7 +59,7 @@ const SignIn = () => {
             className="w-[100px] h-[100px]"
           />
 
-          <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
+          <Text className="text-2xl text-white text-semibold mt-10 mb-8 font-psemibold">
             Log In to UnityBridge
           </Text>
 
@@ -68,7 +68,7 @@ const SignIn = () => {
             value={form.email}
             placeholder="Enter your email"
             handleChangeText={(e) => setForm({ ...form, email: e })}
-            otherStyles="mt-7"
+            otherStyles=""
             keyboardType="email-address"
           />
           {errors.email ? <Text className="text-green-500 mt-1">{errors.email}</Text> : null}
@@ -78,14 +78,14 @@ const SignIn = () => {
             value={form.password}
             placeholder="Enter your password"
             handleChangeText={(e) => setForm({ ...form, password: e })}
-            otherStyles="mt-7"
+            otherStyles=""
           />
           {errors.password ? <Text className="text-green-500 mt-1">{errors.password}</Text> : null}
 
           <CustomButton
             title="Sign In"
             handlePress={submit}
-            containerStyles="w-full mt-7"
+            containerStyles="w-full"
             textStyles="text-black font-psemibold"
             isLoading={isSubmitting}
           />

@@ -37,56 +37,40 @@ const profileSettings = (profilePic, name, email, phoneNo) => {
               className="w-40 h-40 rounded-full"
             />
           </View>
-  
-          <View className="pl-4 pr-4">
-            <Text className="text-white font-bold text-lg pt-8">
-              Username
-            </Text>
 
+          <View className="p-4">
             <FormField
-              title={null}
+              title={"Username"}
               value={form.name}
               placeholder="Enter your new username"
               handleChangeText={(e) => setForm({ ...form, name: e })}
               otherStyles="mt-0"
             />
 
-            <Text className="text-white font-bold text-lg pt-8">
-              E-mail
-            </Text>
 
             <FormField
-              title={null}
+              title={"E-mail"}
               value={form.email}
               placeholder="Enter your new email"
               handleChangeText={(e) => setForm({ ...form, email: e })}
               otherStyles="mt-0"
             />
 
-            <Text className="text-white font-bold text-lg pt-8">
-              {/* {name} */}
-              Phone Number
-            </Text>
-
             <FormField
-              title={null}
+              title="Phone Number"
               value={form.phoneNo}
               placeholder="Enter your new phone number"
               handleChangeText={(e) => setForm({ ...form, phoneNo: e })}
               otherStyles="mt-0"
             />
 
-            <Text className="text-white font-bold text-lg pt-8">
-              {/* {name} */}
-              Password
-            </Text>
 
             <FormField
-              title={null}
+              title="Password"
               value={form.password}
               placeholder="Enter your new Password"
               handleChangeText={(e) => setForm({ ...form, password: e })}
-              otherStyles="mt-0 text-red-400"
+              otherStyles="mt-0 text-red-400 mb-4"
             />
 
 
