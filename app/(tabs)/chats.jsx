@@ -10,7 +10,9 @@ const Chats = () => {
     <SafeAreaView className="flex-1">
       {/* <MenuProvider> */}
         <View>
-          <HomeHeader />
+          <HomeHeader 
+            title="Chats"
+          />
         </View>
         <ScrollView className="flex-1 bg-bprimary">
           <Entry 

@@ -10,7 +10,9 @@ const Calls = () => {
     <SafeAreaView className="flex-1">
       {/* <MenuProvider> */}
         <View>
-          <HomeHeader />
+          <HomeHeader 
+            title="Calls"
+          />
         </View>
         <ScrollView className="min-h-full bg-bprimary">
           <Entry

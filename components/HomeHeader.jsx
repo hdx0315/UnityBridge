@@ -4,11 +4,11 @@ import { icons } from '../constants';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 import { router } from 'expo-router';
 
-const HomeHeader = () => {
+const HomeHeader = ({title}) => {
   return (
     <View className="flex-row bg-bprimary justify-between items-center border-b-2 border-green-500 min-h-[40px]">
       <View>
-        <Text className="pl-4 pt-4 pb-4 text-xl font-pbold text-white">Chats</Text>
+        <Text className="pl-4 pt-4 pb-4 text-xl font-pbold text-white">Unity {title}</Text>
       </View>
       <View>
         <Menu>
