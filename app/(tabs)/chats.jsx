@@ -11,6 +11,7 @@ import { router, useRouter } from 'expo-router';
 import { create } from 'zustand'
 import { useUserStore } from '../../stores/userStore';
 
+
 const Chats = () => {
   const router = useRouter();
 
@@ -25,8 +26,11 @@ const Chats = () => {
   return (
     <SafeAreaView className="flex-1">
       <View>
-        <HomeHeader title="Chats" />
+        <HomeHeader 
+          title="Chats" 
+        />
       </View>
+      
       <ScrollView className="flex-1 bg-bprimary">
         <Entry 
           profilePic={images.profile}

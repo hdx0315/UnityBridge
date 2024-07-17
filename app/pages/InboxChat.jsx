@@ -28,7 +28,7 @@ import ChatHeader from '../../components/ChatHeader';
 
         {sampleMessages.map((message) => (
           <View key={message.id}  className="p-4 bg-emerald-950 rounded-lg mb-2">
-            <Text className="text-white">
+            <Text className="text-white text-lg">
               {message.text}
             </Text>
             <Text className="text-gray-500 ml-4">
