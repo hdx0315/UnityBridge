@@ -11,7 +11,7 @@ const ChatHeader = () => {
   const profilepic = useUserStore(state => state.profilePic);
 
   const navigateToProfile = () => {
-    router.push('pages/profile'); // Adjust this to match your actual profile screen route
+    router.push('pages/OthersProfile'); // Adjust this to match your actual profile screen route
   };
 
   return (

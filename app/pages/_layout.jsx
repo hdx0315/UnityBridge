@@ -25,6 +25,12 @@ const SettingsLayout = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name='OthersProfile'
+          options={{
+            headerShown: false,
+          }}
+        />
       <Stack.Screen
           name='search'
           options={{

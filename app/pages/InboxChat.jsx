@@ -9,9 +9,9 @@ import ChatHeader from '../../components/ChatHeader';
 
     //fetch sampleMessages from DB
     const sampleMessages = [
-      { id: 1, text: 'Hey, how are you?', time: '10:00 AM' },
-      { id: 2, text: 'I\'m good, thanks! How about you?', time: '10:05 AM' },
-      { id: 3, text: 'Doing well, just busy with work.', time: '10:10 AM' },
+      { id: 1, text: 'Hey', time: '10:00 AM' },
+      { id: 2, text: 'Hey, how are you?', time: '10:05 AM' },
+      { id: 3, text: 'Doing well, thanks. Whatsup!?', time: '10:10 AM' },
     ];
   
 
