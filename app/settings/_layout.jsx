@@ -25,7 +25,15 @@ const SettingsLayout = () => {
             headerShown: false,
           }}
         />
+      <Stack.Screen
+          name='search'
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
+
+
       <StatusBar
         backgroundColor="#052e16"
         style='light'

@@ -7,7 +7,7 @@ import { router } from 'expo-router';
 
 const profile = ({profilePic, name, email}) => {
   return (
-    <SafeAreaView className="bg-bprimary">
+    <SafeAreaView>
       <View className="bg-bprimary min-h-full flex-col">
         <View className="w-full items-center justify-center mt-16">
           <Image
