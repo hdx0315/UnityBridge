@@ -1,19 +1,19 @@
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, FlatList } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Entry from '../../components/Entry';
 import HomeHeader from '../../components/HomeHeader';
 import { images } from '../../constants';
 
-const Chats = () => {
+const Chats = ({uses}) => {
   return (
     <SafeAreaView className="flex-1">
-      {/* <MenuProvider> */}
         <View>
           <HomeHeader 
             title="Chats"
           />
         </View>
+
         <ScrollView className="flex-1 bg-bprimary">
           <Entry 
             profilePic={images.profile}
@@ -27,8 +27,23 @@ const Chats = () => {
             msgPrev="message preview 02"
             timestamp="05.20"
           />
+
+    {/*
+          <FlatList
+            data={users}
+            keyExtractor={item=> Math.random()}
+            renderItem={({item, index}) => {
+              <Entry
+                profilePic={null}
+
+              />
+            }}
+          
+          />
+*/}   
+
         </ScrollView>
-      {/* </MenuProvider> */}
+        
     </SafeAreaView>
   );
 }

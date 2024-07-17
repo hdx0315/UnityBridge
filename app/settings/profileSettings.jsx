@@ -81,7 +81,7 @@ const profileSettings = (profilePic, name, email, phoneNo) => {
               title="Save Changes"
               containerStyles="max-w-[300px]"
               textStyles="pl-6 pr-6"
-              handlePress={()=>router.push('settings/profile')}
+              handlePress={()=>router.push('pages/profile')}
             />
           </View>
         </ScrollView>

@@ -44,7 +44,7 @@ const HomeHeader = ({title}) => {
             }
           }}>
             <MenuOption 
-                onSelect={() => router.push('settings/profile')} 
+                onSelect={() => router.push('pages/profile')} 
                 
             >
                 <Text className="text-white text-lg">
@@ -62,7 +62,7 @@ const HomeHeader = ({title}) => {
             </MenuOption>
 
             <MenuOption 
-                onSelect={() => router.push('settings/search')} 
+                onSelect={() => router.push('pages/search')} 
                 
             >
                 <Text className="text-white text-lg">
