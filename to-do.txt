@@ -1,0 +1,53 @@
+
+Create a loading screen.
+
+
+
+Sign Up.jsx
+    53. Add API call to Register new user
+
+
+Sign in.jsx
+    45. Add API call to Authenticate user
+    50. Load chats from DB 
+        pass those chats to CHATS.jsx
+
+
+chats.jsx
+    35. render chats from DB and map them for ENTRT s
+    
+
+chats.jsx
+    35. render calls from DB and map them for ENTRT s
+    
+
+InboxChat.jsx
+    10. fetch messages from db
+    28. Edit rendering format
+
+CallDetails.jsx
+    15. render details of a call from db
+
+OthersProfile.jsx
+    9. get props from InboxChat and render related profile details from DB
+
+Profile.jsx
+    8. get user profile information from database
+
+Search.jsx
+    8. add search functionality
+
+
+appSettings.jsx
+    Add Change theme settings
+    choose other app settings and ways to implement them
+
+profileSettings.jsx
+    fetch all profile information
+    store new information in database
+
+CallHeader.jsx
+    fetch call data 
+
+ChatHeader.jsx
+    use props data from chat entry

@@ -8,8 +8,8 @@ import { Link, router } from 'expo-router'
 
 const SignIn = () => {
   const [form, setForm] = useState({
-    email: 'f',
-    password: 'ff'
+    email: '',
+    password: ''
   })
 
   const [errors, setErrors] = useState({
@@ -41,9 +41,14 @@ const SignIn = () => {
 
     if (isValid) {
       setIsSubmitting(true)
-      // Simulate an API call
+
+      // Add API call to authenticate user
+
       setTimeout(() => {
         setIsSubmitting(false)
+
+        // Load chats from DB after successful authentication.
+
         router.replace('/chats')
       }, 1)
     }
@@ -59,7 +64,7 @@ const SignIn = () => {
             className="w-[100px] h-[100px]"
           />
 
-          <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
+          <Text className="text-2xl text-white text-semibold mt-10 mb-8 font-psemibold">
             Log In to UnityBridge
           </Text>
 
@@ -68,24 +73,25 @@ const SignIn = () => {
             value={form.email}
             placeholder="Enter your email"
             handleChangeText={(e) => setForm({ ...form, email: e })}
-            otherStyles="mt-7"
-            keyboardType="email-address"
+            otherStyles=""
+            keyboardType="email"
           />
-          {errors.email ? <Text className="text-green-500 mt-1">{errors.email}</Text> : null}
+          {errors.email ? <Text className="text-green-500 mt-0 mb-6">{errors.email}</Text> : null}
 
           <FormField
             title="Password"
             value={form.password}
             placeholder="Enter your password"
             handleChangeText={(e) => setForm({ ...form, password: e })}
-            otherStyles="mt-7"
+            otherStyles=""
+            className=""
           />
-          {errors.password ? <Text className="text-green-500 mt-1">{errors.password}</Text> : null}
+          {errors.password ? <Text className="text-green-500 mt-0 mb-6">{errors.password}</Text> : null}
 
           <CustomButton
             title="Sign In"
             handlePress={submit}
-            containerStyles="w-full mt-7"
+            containerStyles="w-full"
             textStyles="text-black font-psemibold"
             isLoading={isSubmitting}
           />

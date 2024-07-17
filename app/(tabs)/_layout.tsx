@@ -1,21 +1,24 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
-import { Tabs, Stack, Redirect} from 'expo-router'
-import { icons} from '../../constants';
+import { Tabs} from 'expo-router'
 import {StatusBar} from 'expo-status-bar'
 import { MenuProvider } from 'react-native-popup-menu';
 
-const TabIcon = ({icon, color, name, focused}) => {
+import { Ionicons } from '@expo/vector-icons';
+
+const TabIcon = ({color, tname, focused, name, size}) => {
   return(
-    <View className="items-center justify-center gap-2">
-      <Image
-        source={icon}
+    <View className="items-center justify-center gap-2 py-4">
+      <Ionicons name={name} size={24} 
+        color={color}
         resizeMode='contain'
         tintColor={color}
-        className='w-6 h-6'
-      />
-      <Text className={`${focused? 'font-psemibold': 'font-pregular'} text-xs`} style={{color:color}}>
-        {name}
+        className='w-6 h-6'/>
+      <Text 
+        className={`${focused? 'font-psemibold': 'font-pregular'} text-xs`} 
+        style={{color:color}}
+      >
+        {tname}
       </Text>
     </View>
   )
@@ -34,8 +37,8 @@ const TabsLayout = () => {
           tabBarStyle:{
             backgroundColor: '#052e16',
             borderTopWidth: 1,
-            borderTopColor: "#232533",
-            height: 60
+            borderTopColor: "#052e16",
+            height: 80
           }
         }}
       >
@@ -46,11 +49,15 @@ const TabsLayout = () => {
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={icons.home}
                 color={color}
-                name="Chats"
+                tname="Chats"
                 focused={focused}
+                name="chatbubble-ellipses-sharp"
+                size={24} 
+
               />
+
+
             ),
           }}
         />
@@ -61,10 +68,11 @@ const TabsLayout = () => {
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={icons.bookmark}
                 color={color}
-                name="Calls"
+                tname="Calls"
                 focused={focused}
+                name="call-sharp"
+                size={24} 
               />
             ),
           }}

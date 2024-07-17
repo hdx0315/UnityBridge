@@ -9,13 +9,31 @@ const SettingsLayout = () => {
     <>
       <Stack>
         <Stack.Screen
-          name='appSettings'
+          name='InboxChat'
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name='profileSettings'
+          name='CallDetails'
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='profile'
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='OthersProfile'
+          options={{
+            headerShown: false,
+          }}
+        />
+      <Stack.Screen
+          name='search'
           options={{
             headerShown: false,
           }}
