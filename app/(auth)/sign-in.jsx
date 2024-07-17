@@ -74,9 +74,9 @@ const SignIn = () => {
             placeholder="Enter your email"
             handleChangeText={(e) => setForm({ ...form, email: e })}
             otherStyles=""
-            keyboardType="email-address"
+            keyboardType="email"
           />
-          {errors.email ? <Text className="text-green-500 mt-1">{errors.email}</Text> : null}
+          {errors.email ? <Text className="text-green-500 mt-0 mb-6">{errors.email}</Text> : null}
 
           <FormField
             title="Password"
@@ -84,8 +84,9 @@ const SignIn = () => {
             placeholder="Enter your password"
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles=""
+            className=""
           />
-          {errors.password ? <Text className="text-green-500 mt-1">{errors.password}</Text> : null}
+          {errors.password ? <Text className="text-green-500 mt-0 mb-6">{errors.password}</Text> : null}
 
           <CustomButton
             title="Sign In"

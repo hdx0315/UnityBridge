@@ -3,6 +3,7 @@ import React from 'react';
 import { icons } from '../constants';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 import { router } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 
 const HomeHeader = ({title}) => {
   return (
@@ -14,14 +15,15 @@ const HomeHeader = ({title}) => {
         </Text>
       </View>
 
-      <View>
+      <View className="mr-4">
         <Menu>
           <MenuTrigger>
-            <Image 
-                source={icons.menu} 
-                className="w-6 h-6 ml-auto mr-1" 
-                resizeMode="contain" 
-            />
+          <Ionicons 
+                name="menu" 
+                size={30} 
+                color="#CDCDE0" 
+                className="w-6 h-6 ml-auto pr-10" 
+                resizeMode="contain" />
           </MenuTrigger>
 
           <MenuOptions customStyles={{
@@ -47,7 +49,7 @@ const HomeHeader = ({title}) => {
               padding:10
             }
           }}>
-            
+
             <MenuOption 
                 onSelect={() => router.push('pages/profile')} 
                 

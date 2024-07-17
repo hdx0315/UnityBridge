@@ -12,6 +12,16 @@ import eyeHide from "../assets/icons/eye-hide.png";
 import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+const ManProfile = () => {
+  return(
+
+    <MaterialCommunityIcons name="face-man-profile" size={24} color="black" />
+  )
+}
+
 export default {
   play,
   bookmark,
@@ -26,4 +36,6 @@ export default {
   logout,
   eyeHide,
   eye,
+  Ionicons,
+  ManProfile
 };

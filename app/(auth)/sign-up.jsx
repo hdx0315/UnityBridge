@@ -81,7 +81,7 @@ const SignUp = () => {
             handleChangeText={(e) => setForm({ ...form, username: e })}
             otherStyles=""
           />
-          {errors.username ? <Text className="text-green-500 mt-1">{errors.username}</Text> : null}
+          {errors.username ? <Text className="text-green-500 mt-0 mb-6">{errors.username}</Text> : null}
 
           <FormField
             title="Email"
@@ -91,7 +91,7 @@ const SignUp = () => {
             otherStyles=""
             keyboardType="email-address"
           />
-          {errors.email ? <Text className="text-green-500 mt-1">{errors.email}</Text> : null}
+          {errors.email ? <Text className="text-green-500 mt-0 mb-6">{errors.email}</Text> : null}
 
           <FormField
             title="Password"
@@ -100,7 +100,7 @@ const SignUp = () => {
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles=""
           />
-          {errors.password ? <Text className="text-green-500 mt-1">{errors.password}</Text> : null}
+          {errors.password ? <Text className="text-green-500 mt-0 mb-6">{errors.password}</Text> : null}
 
           <CustomButton
             title="Register"

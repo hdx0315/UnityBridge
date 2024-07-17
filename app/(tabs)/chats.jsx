@@ -10,7 +10,6 @@ import { images } from '../../constants';
 import { useRouter } from 'expo-router';
 import { useUserStore } from '../../stores/userStore';
 
-
 const Chats = () => {
   const router = useRouter();
 
@@ -33,7 +32,6 @@ const Chats = () => {
       <ScrollView className="flex-1 bg-bprimary">
 
         {/* //render chats from DB and map them for ENTRT s.  */}
-
         <Entry 
           profilePic={images.profile}
           name="Chat 01"
