@@ -5,9 +5,13 @@ import { images } from '../../constants';
 import CustomButton from '../../components/CustomButton';
 import { router } from 'expo-router';
 
+// get user profile information from database
+
 const profile = ({profilePic, name, email}) => {
+
   return (
     <SafeAreaView>
+      
       <View className="bg-bprimary min-h-full flex-col">
         <View className="w-full items-center justify-center mt-16">
           <Image

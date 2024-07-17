@@ -1,14 +1,13 @@
 
 
 
-import React, { useState } from 'react';
+import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Entry from '../../components/Entry';
 import HomeHeader from '../../components/HomeHeader';
 import { images } from '../../constants';
-import { router, useRouter } from 'expo-router';
-import { create } from 'zustand'
+import { useRouter } from 'expo-router';
 import { useUserStore } from '../../stores/userStore';
 
 
@@ -32,6 +31,9 @@ const Chats = () => {
       </View>
       
       <ScrollView className="flex-1 bg-bprimary">
+
+        {/* //render chats from DB and map them for ENTRT s.  */}
+
         <Entry 
           profilePic={images.profile}
           name="Chat 01"

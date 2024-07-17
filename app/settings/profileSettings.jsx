@@ -1,12 +1,9 @@
-import { View, Text , Image} from 'react-native'
-import React from 'react'
+import { View, ScrollView , Image} from 'react-native'
+import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants';
 import CustomButton from '../../components/CustomButton';
 import FormField from '../../components/FormField';
-import { useState } from 'react';
-//import { ScrollView } from 'react-native-gesture-handler';
-import { ScrollView } from 'react-native';
 import { router } from 'expo-router';
 
 const profileSettings = (profilePic, name, email, phoneNo) => {
@@ -20,6 +17,7 @@ const profileSettings = (profilePic, name, email, phoneNo) => {
     password:{}
   })
  }*/
+
   const [form, setForm] = useState({
    // profilePic: "Your Username",
     name: "Your username",

@@ -8,8 +8,8 @@ import { Link, router } from 'expo-router'
 
 const SignIn = () => {
   const [form, setForm] = useState({
-    email: 'f',
-    password: 'ff'
+    email: '',
+    password: ''
   })
 
   const [errors, setErrors] = useState({
@@ -41,9 +41,14 @@ const SignIn = () => {
 
     if (isValid) {
       setIsSubmitting(true)
-      // Simulate an API call
+
+      // Add API call to authenticate user
+
       setTimeout(() => {
         setIsSubmitting(false)
+
+        // Load chats from DB after successful authentication.
+
         router.replace('/chats')
       }, 1)
     }

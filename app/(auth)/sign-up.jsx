@@ -49,7 +49,9 @@ const SignUp = () => {
 
     if (isValid) {
       setIsSubmitting(true)
-      // Simulate an API call
+      
+      // Add API call to Register new user
+
       setTimeout(() => {
         setIsSubmitting(false)
         router.replace('/chats')
@@ -59,6 +61,7 @@ const SignUp = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
+
       <ScrollView>
         <View className="w-full justify-center min-h-[85vh] px-4 my-2">
           <Image 
@@ -115,6 +118,7 @@ const SignUp = () => {
           </View>
 
         </View>
+        
       </ScrollView>
     </SafeAreaView>
   )

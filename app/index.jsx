@@ -1,6 +1,6 @@
 import { View, Text, StatusBar , ScrollView, Image} from 'react-native'
 import React from 'react'
-import { Link, Redirect, router } from 'expo-router'
+import { router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {images} from '../constants' 
 import CustomButton from '../components/CustomButton'
@@ -18,9 +18,6 @@ const App = () => {
             className="w-[150px] h-[150px]"
             resizeMode="contain"
           />
-          {/*
-          -------More Images
-          */}
 
           <View className="relative mt-5">
             <Text className="text-3xl text-white font-bold text-center">
@@ -39,6 +36,7 @@ const App = () => {
             handlePress={()=>router.push('sign-in')}
         
 /*{
+    easy path to access currently editing screen
           handlePress={()=>router.push('settings/search')}
  }*/
 

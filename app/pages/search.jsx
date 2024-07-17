@@ -1,11 +1,11 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ScrollView } from 'react-native'
-import { TouchableOpacity } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons';
 import FormField from '../../components/FormField';
 
+//add search functionality
 
 const Search = () => {
   return (

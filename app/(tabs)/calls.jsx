@@ -1,14 +1,13 @@
 
 
 
-import React, { useState } from 'react';
+import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Entry from '../../components/Entry';
 import HomeHeader from '../../components/HomeHeader';
 import { images } from '../../constants';
-import { router, useRouter } from 'expo-router';
-import { create } from 'zustand'
+import { useRouter } from 'expo-router';
 import { useUserCallStore } from '../../stores/userStore';
 
 
@@ -18,14 +17,13 @@ const Calls = () => {
   const setUserCall = useUserCallStore(state => state.setNameProfilePicAndCalltype);
   
   const handleCallPress = (profilePicParam, nameParam, clTypeParam) => {
-    
     setUserCall(nameParam, profilePicParam, clTypeParam);
       router.push('pages/CallDetails')
   };
 
   return (
     <SafeAreaView className="flex-1">
-      {/* <MenuProvider> */}
+      
         <View>
           <HomeHeader 
             title="Calls"
@@ -33,6 +31,9 @@ const Calls = () => {
         </View>
 
         <ScrollView className="min-h-full bg-bprimary">
+          
+        {/* //render calls from DB and map them for ENTRT s.  */}
+
           <Entry
             profilePic={images.empty}
             name="Call Name 01"
@@ -48,7 +49,7 @@ const Calls = () => {
             onPress={() => handleCallPress(images.profile, 'Call Name 02', "Cl type")}
           />
         </ScrollView>
-      {/* </MenuProvider> */}
+        
     </SafeAreaView>
   );
 }

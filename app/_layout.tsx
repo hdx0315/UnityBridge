@@ -61,7 +61,8 @@ const RootLayout = () => {
         name='pages' 
         options={{headerShown:false}}
       />
-      {/* <Stack.Screen name='/search/[query]' options={{headerShown:false}}/> */}
+      {/* <Stack.Screen name='/search/[query]' 
+      options={{headerShown:false}}/> */}
     </Stack>
   )
 }
