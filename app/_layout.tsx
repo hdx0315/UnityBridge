@@ -4,8 +4,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { AuthProvider } from '../contexts/AuthContext'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -38,6 +37,7 @@ const RootLayout = () => {
   }
 
   return (
+    <AuthProvider>
     <Stack>
       <Stack.Screen 
         name='index' 
@@ -64,6 +64,7 @@ const RootLayout = () => {
       {/* <Stack.Screen name='/search/[query]' 
       options={{headerShown:false}}/> */}
     </Stack>
+    </AuthProvider>
   )
 }
 

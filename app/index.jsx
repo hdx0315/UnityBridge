@@ -1,11 +1,15 @@
 import { View, Text, StatusBar , ScrollView, Image} from 'react-native'
 import React from 'react'
-import { router } from 'expo-router'
+import { Redirect, router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {images} from '../constants' 
 import CustomButton from '../components/CustomButton'
+import { useAuthContext } from '../contexts/AuthContext'
 
 const App = () => {
+  const { isAuthenticated } = useAuthContext()
+  if (isAuthenticated) return <Redirect href="/chats" />; 
+
   return (
     <SafeAreaView className="bg-green-950 h-full">
       
