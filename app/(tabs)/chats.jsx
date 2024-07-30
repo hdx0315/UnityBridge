@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -9,8 +6,11 @@ import HomeHeader from '../../components/HomeHeader';
 import { images } from '../../constants';
 import { useRouter } from 'expo-router';
 import { useUserStore } from '../../stores/userStore';
+import { useAuthContext } from '../../contexts/AuthContext';
 
 const Chats = () => {
+  const { user } = useAuthContext()
+
   const router = useRouter();
 
   const setUser = useUserStore(state => state.setNameAndProfilePic);
@@ -20,6 +20,8 @@ const Chats = () => {
       setUser(nameParam, profilePicParam);
       router.push('pages/InboxChat')
   };
+
+  console.log('User Data', user);
 
   return (
     <SafeAreaView className="flex-1">

@@ -7,8 +7,6 @@ import CustomButton from '../components/CustomButton'
 import { useAuthContext } from '../contexts/AuthContext'
 
 const App = () => {
-  const { isAuthenticated } = useAuthContext()
-  if (isAuthenticated) return <Redirect href="/chats" />; 
 
   return (
     <SafeAreaView className="bg-green-950 h-full">
