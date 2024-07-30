@@ -8,8 +8,8 @@ import { Link, router } from 'expo-router'
 
 const SignIn = () => {
   const [form, setForm] = useState({
-    email: 'test',
-    password: 'test'
+    email: '',
+    password: ''
   })
 
   const [errors, setErrors] = useState({
