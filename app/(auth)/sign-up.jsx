@@ -1,12 +1,15 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
 import { Link, router } from 'expo-router'
+import { useAuthContext } from '../../contexts/AuthContext'
 
 const SignUp = () => {
+  const { register } = useAuthContext()
+
   const [form, setForm] = useState({
     username: '',
     email: '',
@@ -21,7 +24,7 @@ const SignUp = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const submit = () => {
+  const submit = async () => {
     const { username, email, password } = form
     let isValid = true
     let newErrors = {
@@ -49,13 +52,11 @@ const SignUp = () => {
 
     if (isValid) {
       setIsSubmitting(true)
-      
-      // Add API call to Register new user
-
-      setTimeout(() => {
-        setIsSubmitting(false)
-        router.replace('/chats')
-      }, 1000)
+      const response = await register(email, password, username)
+      setIsSubmitting(false)
+      if (!response.success) {
+        Alert.alert('Sign Up', response.msg)
+      }
     }
   }
 
@@ -64,7 +65,7 @@ const SignUp = () => {
 
       <ScrollView>
         <View className="w-full justify-center min-h-[85vh] px-4 my-2">
-          <Image 
+          <Image
             source={images.logo}
             resizeMode='contain'
             className="w-[100px] h-[100px]"
@@ -112,13 +113,13 @@ const SignUp = () => {
 
           <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-white font-pregular">
-              Already have an account? 
+              Already have an account?
             </Text>
             <Link href='/sign-in' className="text-lg text-secondary font-psemibold">Sign In</Link>
           </View>
 
         </View>
-        
+
       </ScrollView>
     </SafeAreaView>
   )

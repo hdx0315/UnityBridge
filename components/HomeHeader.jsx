@@ -4,8 +4,15 @@ import { icons } from '../constants';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { useAuthContext } from '../contexts/AuthContext';
 
 const HomeHeader = ({title}) => {
+  const { logout } = useAuthContext()
+  
+  const handleLogout = async () => {
+    await logout()
+  }
+
   return (
     <View className="flex-row bg-bprimary justify-between items-center border-b-2 border-green-500 min-h-[40px]">
       
@@ -61,7 +68,6 @@ const HomeHeader = ({title}) => {
 
             <MenuOption 
                 onSelect={() => router.push('settings/appSettings')} 
-                
             >
                 <Text className="text-white bg-green-700 text-lg">
                     Settings
@@ -69,11 +75,10 @@ const HomeHeader = ({title}) => {
             </MenuOption>
 
             <MenuOption 
-                onSelect={() => router.push('pages/search')} 
-                
+                onSelect={handleLogout} 
             >
                 <Text className="text-white text-lg">
-                    Search
+                    Sign Out
                 </Text>
             </MenuOption>
           </MenuOptions>
