@@ -2,6 +2,7 @@ import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { useState } from 'react';
 import { Button, Text, TouchableOpacity, View, Pressable } from 'react-native';
 import CustomButton from '../../components/CustomButton'
+import { SafeAreaView } from 'react-native';
 
 export default function App() {
   const [facing, setFacing] = useState<CameraType>('back');
@@ -40,14 +41,19 @@ export default function App() {
   }
 
   return (
-    <View className="flex-1 justify-center">
+    <SafeAreaView className="flex-1 justify-center">
       <CameraView className="flex-1" facing={facing}>
         <View className="flex-1 flex-row bg-transparent m-16">
           <TouchableOpacity className="flex-1 self-end items-center" onPress={toggleCameraFacing}>
             <Text className="text-xl font-bold text-white">Flip Camera</Text>
           </TouchableOpacity>
         </View>
+        <View className="flex-row justify-center border-2 border-secondary rounded-lg m-2">
+          <Text className="text-lg text-secondary">
+            Live Sign lang detection
+          </Text>
+        </View>
       </CameraView>
-    </View>
+    </SafeAreaView>
   );
 }

@@ -85,7 +85,7 @@ const TabsLayout = () => {
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
                 color={color}
-                tname="Calls"
+                tname="Camera"
                 focused={focused}
                 name="camera-sharp"
                 size={24} 
