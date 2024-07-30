@@ -77,6 +77,22 @@ const TabsLayout = () => {
             ),
           }}
         />
+        <Tabs.Screen
+          name='camera'
+          options={{
+            title: 'Camera',
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                color={color}
+                tname="Camera"
+                focused={focused}
+                name="camera-sharp"
+                size={24} 
+              />
+            ),
+          }}
+        />
       </Tabs>
 
 
