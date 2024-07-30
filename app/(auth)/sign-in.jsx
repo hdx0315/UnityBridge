@@ -1,12 +1,14 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
 import { Link, router } from 'expo-router'
+import { useAuthContext } from '../../contexts/AuthContext'
 
 const SignIn = () => {
+  const { login } = useAuthContext()
   const [form, setForm] = useState({
     email: '',
     password: ''
@@ -19,7 +21,7 @@ const SignIn = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const submit = () => {
+  const submit = async () => {
     const { email, password } = form
     let isValid = true
     let newErrors = {
@@ -41,16 +43,11 @@ const SignIn = () => {
 
     if (isValid) {
       setIsSubmitting(true)
-
-      // Add API call to authenticate user
-
-      setTimeout(() => {
-        setIsSubmitting(false)
-
-        // Load chats from DB after successful authentication.
-
-        router.replace('/chats')
-      }, 1)
+      const response = await login(email, password)
+      setIsSubmitting(false)
+      if (!response.success) {
+        Alert.alert('Sign In', response.msg)
+      }
     }
   }
 
@@ -58,7 +55,7 @@ const SignIn = () => {
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
         <View className="w-full justify-center min-h-[85vh] px-4 my-6">
-          <Image 
+          <Image
             source={images.logo}
             resizeMode='contain'
             className="w-[100px] h-[100px]"
@@ -98,7 +95,7 @@ const SignIn = () => {
 
           <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-white font-pregular">
-              Don't have an account? 
+              Don't have an account?
             </Text>
             <Link href='/sign-up' className="text-lg text-secondary font-psemibold">Sign Up</Link>
           </View>
