@@ -1,54 +1,56 @@
-import React from 'react';
-import { View, ScrollView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Entry from '../../components/Entry';
 import HomeHeader from '../../components/HomeHeader';
-import { images } from '../../constants';
-import { useRouter } from 'expo-router';
-import { useUserStore } from '../../stores/userStore';
 import { useAuthContext } from '../../contexts/AuthContext';
+import ChatList from '../../components/ChatList';
+import { getDocs, query, where } from 'firebase/firestore';
+import { usersRef } from '../../lib/firebase';
 
 const Chats = () => {
   const { user } = useAuthContext()
 
-  const router = useRouter();
+  const [users, setUsers] = useState([])
 
-  const setUser = useUserStore(state => state.setNameAndProfilePic);
-  
-  const handleChatPress = (profilePicParam, nameParam) => {
-    
-      setUser(nameParam, profilePicParam);
-      router.push('pages/InboxChat')
-  };
+  useEffect(() => {
+    if (user?.uid) {
+      getUsers()
+    }
+  }, [])
+
+  const getUsers = async () => {
+    const q = query(usersRef, where('userId', '!=', user?.uid))
+    const querySnapshot = await getDocs(q)
+    let data = [];
+    querySnapshot.forEach((doc) => {
+      data.push({...doc.data()})
+    })
+    console.log('got data:', data);
+    setUsers(data)
+  }
 
   console.log('User Data', user);
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-bprimary">
       <View>
         <HomeHeader 
           title="Chats" 
         />
       </View>
-      
-      <ScrollView className="flex-1 bg-bprimary">
 
         {/* //render chats from DB and map them for ENTRT s.  */}
-        <Entry 
-          profilePic={images.profile}
-          name="Chat 01"
-          msgPrev="message preview 01"
-          timestamp="04.16"
-          onPress={() => handleChatPress(images.profile, 'Chat 01')}
-        />
-        <Entry 
-          profilePic={images.profile}
-          name="Chat 02"
-          msgPrev="message preview 02"
-          timestamp="05.20"
-          onPress={() => handleChatPress(images.profile, 'Chat 02')}
-        />
-      </ScrollView>
+        <View className='flex-1 bg-bprimary'>
+        {users.length > 0 ? (
+          <ChatList users={users}/>
+        ):(
+          <View className="flex-1 items-center">
+            <ActivityIndicator size='large' />
+          </View>
+        )}
+        </View>
+        
+
     </SafeAreaView>
   );
 };

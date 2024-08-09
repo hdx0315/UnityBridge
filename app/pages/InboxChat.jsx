@@ -5,8 +5,11 @@ import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ChatHeader from '../../components/ChatHeader';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useLocalSearchParams } from 'expo-router';
 
 const InboxChat = () => {
+  const item = useLocalSearchParams()
+
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([
     { id: 1, text: 'Hey', time: '10:00 AM' },
@@ -29,7 +32,7 @@ const InboxChat = () => {
   return (
     <SafeAreaView className="flex-1">
       <View>
-        <ChatHeader />
+        <ChatHeader item={item}/>
       </View>
 
       <ScrollView className="flex-1 bg-bprimary-100 p-4">
