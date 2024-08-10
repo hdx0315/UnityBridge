@@ -6,7 +6,7 @@ import { useUserStore } from '../stores/userStore';
 import { router } from 'expo-router';
 import { images } from '../constants';
 
-const ChatHeader = ({item}) => {
+const ChatHeader = ({user}) => {
   const navigation = useNavigation();
 
   const name = useUserStore(state => state.name);
@@ -48,7 +48,7 @@ const ChatHeader = ({item}) => {
              onPress={navigateToProfile}
             >
               <Text className="text-white text-xl ml-4">
-                {item?.username}
+                {user?.username}
               </Text>
             </TouchableOpacity>
             
