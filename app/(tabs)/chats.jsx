@@ -25,11 +25,11 @@ const Chats = () => {
     querySnapshot.forEach((doc) => {
       data.push({...doc.data()})
     })
-    console.log('got data:', data);
+    // console.log('got data:', data);
     setUsers(data)
   }
 
-  console.log('User Data', user);
+  // console.log('User Data', user);
 
   return (
     <SafeAreaView className="flex-1 bg-bprimary">
