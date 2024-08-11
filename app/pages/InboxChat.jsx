@@ -95,7 +95,7 @@ const InboxChat = () => {
         <ChatHeader user={item} />
       </View>
       <View className='flex-1 justify-between overflow-visible'>
-        <MessagesList messages={messages} />
+        <MessagesList messages={messages} currentUser={user}/>
       </View>
       <KeyboardAvoidingView behavior="padding" className="bg-primary" >
         <View className="flex-row items-center pr-2 pb-2 bg-emerald-950 text-zinc-400">
