@@ -4,8 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { useUserStore } from '../stores/userStore';
 import { router } from 'expo-router';
+import { images } from '../constants';
 
-const ChatHeader = () => {
+const ChatHeader = ({user}) => {
   const navigation = useNavigation();
 
   const name = useUserStore(state => state.name);
@@ -38,7 +39,7 @@ const ChatHeader = () => {
              onPress={navigateToProfile}
             >
               <Image
-                source={profilepic}
+                source={images.profile}
                 className="w-10 h-10 rounded-full px-4"
               />
             </TouchableOpacity>
@@ -47,7 +48,7 @@ const ChatHeader = () => {
              onPress={navigateToProfile}
             >
               <Text className="text-white text-xl ml-4">
-                {name}
+                {user?.username}
               </Text>
             </TouchableOpacity>
             
