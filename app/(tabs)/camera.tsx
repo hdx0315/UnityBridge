@@ -9,7 +9,7 @@ import axios from 'axios';
 export default function App() {
   const [facing, setFacing] = useState<CameraType>('back');
   const [permission, requestPermission] = useCameraPermissions();
-  const cameraRef = useRef<Camera>(null);
+  const cameraRef = useRef(null);
   const [character , setCharacter] = useState('');
   const [message, setMessage] = useState("");
   const [isCameraReady , setiscameraReady] = useState(false)
@@ -17,6 +17,7 @@ export default function App() {
 
   const capture = async () => {
     if(isCameraReady && cameraRef.current && isCapturing){
+      console.log("this function works")
       const photo = await cameraRef.current.takePictureAsync({base64: true});
       sendImageToBackend(photo.base64);
     }
@@ -24,10 +25,11 @@ export default function App() {
 
   const sendImageToBackend = async (image:any) => {
     try {
-      const response = await axios.post('http://192.168.1.3:5000/detect' , {image});
+      const response = await axios.post('http://192.168.8.146:5000/detect' , {image});
       setCharacter(response.data.character);
       setMessage((prevMsg) => prevMsg + response.data.character);
       console.log(message + character)
+      console.log("this function works")
     }
     catch(error){
       console.log("Error happend when sending the image to backend via axios , the error is " , error );
@@ -40,11 +42,14 @@ export default function App() {
 
   const startCapture = () => {
     setIsCapturing(true);
-    const interval = setInterval(() => {
-      capture()
-    } , 2000)
-    return () => clearInterval(interval);
-  }
+    const intervalId = setInterval(() => {
+      if(!isCapturing) {
+        clearInterval(intervalId)
+      }else {
+        capture();
+      }
+    } , 2000);
+  };
 
   const stopCapture = () => {
     setIsCapturing(false);
@@ -55,6 +60,13 @@ export default function App() {
       stopCapture();
     }
   } , []);
+
+  // useEffect(() => {
+  //   // Handle cleanup when navigating away
+  //   return () => {
+  //     stopCapture();
+  //   };
+  // }, [isCapturing]);
 
   if (!permission) {
     // Camera permissions are still loading.
@@ -96,8 +108,8 @@ export default function App() {
             <Text className="text-xl font-bold text-white">Flip Camera</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={startCapture}>
-            <Text>detect signs : </Text>
+          <TouchableOpacity className="flex-1 self-end items-center" onPress={startCapture}>
+            <Text className="text-xl font-bold text-white">Start</Text>
           </TouchableOpacity>
 
         </View>
