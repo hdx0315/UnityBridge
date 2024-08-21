@@ -14,22 +14,23 @@ export default function App() {
   const [message, setMessage] = useState("");
   const [isCameraReady , setiscameraReady] = useState(false)
   const [isCapturing, setIsCapturing] = useState(false);
+  const intervalIdRef = useRef(null);
 
   const capture = async () => {
     if(isCameraReady && cameraRef.current && isCapturing){
-      console.log("this function works")
       const photo = await cameraRef.current.takePictureAsync({base64: true});
-      sendImageToBackend(photo.base64);
+      const base64Image = `data:image/jpeg;base64,${photo.base64}`    //mehma kale python script ekt menna mehm thami image extension eka , (data tpe eka denna one )
+      sendImageToBackend(base64Image);
     }
   };
 
   const sendImageToBackend = async (image:any) => {
     try {
-      const response = await axios.post('http://192.168.8.146:5000/detect' , {image});
+      const response = await axios.post('http://192.168.8.146:5001/process' , {image});
       setCharacter(response.data.character);
       setMessage((prevMsg) => prevMsg + response.data.character);
       console.log(message + character)
-      console.log("this function works")
+      console.log(response.data.character)
     }
     catch(error){
       console.log("Error happend when sending the image to backend via axios , the error is " , error );
@@ -42,17 +43,19 @@ export default function App() {
 
   const startCapture = () => {
     setIsCapturing(true);
-    const intervalId = setInterval(() => {
-      if(!isCapturing) {
-        clearInterval(intervalId)
-      }else {
-        capture();
+    intervalIdRef.current = setInterval(() => {
+      if(isCapturing) {
+        capture()
       }
-    } , 2000);
+    } , 3000);
   };
 
   const stopCapture = () => {
     setIsCapturing(false);
+    if(intervalIdRef.current){
+      clearInterval(intervalIdRef.current);
+      intervalIdRef.current = null;
+    }
   }
 
   useEffect(() => {
@@ -60,13 +63,6 @@ export default function App() {
       stopCapture();
     }
   } , []);
-
-  // useEffect(() => {
-  //   // Handle cleanup when navigating away
-  //   return () => {
-  //     stopCapture();
-  //   };
-  // }, [isCapturing]);
 
   if (!permission) {
     // Camera permissions are still loading.
@@ -112,15 +108,16 @@ export default function App() {
             <Text className="text-xl font-bold text-white">Start</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity className="flex-1 self-end items-center" onPress={stopCapture}>
+            <Text className="text-xl font-bold text-white">Stop</Text>
+          </TouchableOpacity>
+
         </View>
         <View className="flex-row justify-center border-2 border-secondary rounded-lg m-2">
-          <Text className="text-lg text-secondary">
-            {character}
-          </Text>
-
-          <Text>
+          <Text className="text-xl font-bold text-white">
             {message}
           </Text>
+          
         </View>
       </CameraView>
     </SafeAreaView>
