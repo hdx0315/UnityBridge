@@ -12,7 +12,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '4'
 app = Flask(__name__)
 
 detector = HandDetector(maxHands=1)
-classifier = Classifier("F:/intern projecrts/tensorflow + node-express api backend practice project/backend/models/Model/keras_model.h5", "F:/intern projecrts/tensorflow + node-express api backend practice project/backend/models/Model/labels.txt")
+classifier = Classifier("F:/intern projecrts/UnityBridge - Capstone/UnityBridge/models/Model/keras_model.h5", "F:/intern projecrts/UnityBridge - Capstone/UnityBridge/models/Model/labels.txt")
 imgSize = 300
 offset = 25
 labels = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
