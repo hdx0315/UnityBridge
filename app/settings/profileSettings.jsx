@@ -14,7 +14,8 @@ const profileSettings = (profilePic, name, email, phoneNo) => {
     name: name,
     email: email,
     phone: phoneNo,
-    password:{}
+    password:{},
+    test data
   })
  }*/
 
