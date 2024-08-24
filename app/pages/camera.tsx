@@ -5,6 +5,7 @@ import { Button, Text, TouchableOpacity, View, Pressable } from 'react-native';
 import CustomButton from '../../components/CustomButton'
 import { SafeAreaView } from 'react-native';
 import axios from 'axios';
+import { router , useLocalSearchParams} from 'expo-router';
 
 
 export default function App() {
@@ -97,6 +98,7 @@ export default function App() {
   function toggleCameraFacing() {
     setFacing(current => (current === 'back' ? 'front' : 'back'));
   }
+  
 
   return (
     <SafeAreaView className="flex-1 justify-center">

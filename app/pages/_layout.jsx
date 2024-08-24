@@ -32,8 +32,14 @@ const SettingsLayout = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+            name='search'
+            options={{
+              headerShown: false,
+            }}
+          />
       <Stack.Screen
-          name='search'
+          name='camera'
           options={{
             headerShown: false,
           }}
