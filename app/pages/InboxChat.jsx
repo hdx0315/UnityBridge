@@ -1,6 +1,6 @@
 
 
-import { View, Text, ScrollView, TextInput, Button, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TextInput, Button, KeyboardAvoidingView, TouchableOpacity, Keyboard } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ChatHeader from '../../components/ChatHeader';
@@ -29,6 +29,7 @@ const InboxChat = () => {
 
   const textRef = useRef('')
     const inputRef = useRef(null)
+    const scrollViewRef = useRef(null)
 
   useEffect(() => {
     createRoomIfNotExists()
@@ -42,7 +43,14 @@ const InboxChat = () => {
             })
             setMessages([...allMessages])
         })
-        return unsub;
+        const KeyBoardDidShowListener = Keyboard.addListener(
+          'keyboardDidShow', updateScrollView
+      )
+
+      return () => {
+          unsub()
+          KeyBoardDidShowListener.remove()
+      }
   }, [])
 
   console.log(messages);
@@ -89,13 +97,23 @@ const InboxChat = () => {
     // }
   };
 
+  useEffect(() => {
+    updateScrollView()
+}, [messages])
+
+  const updateScrollView = () => {
+    setTimeout(() => {
+        scrollViewRef?.current?.scrollToEnd({animated: true})
+    }, 100)
+  }
+
   return (
     <SafeAreaView className="flex-1">
       <View>
         <ChatHeader user={item} />
       </View>
       <View className='flex-1 justify-between overflow-visible'>
-        <MessagesList messages={messages} currentUser={user}/>
+        <MessagesList messages={messages} currentUser={user} scrollViewRef={scrollViewRef}/>
       </View>
       <KeyboardAvoidingView behavior="padding" className="bg-primary" >
         <View className="flex-row items-center pr-2 pb-2 bg-emerald-950 text-zinc-400">
