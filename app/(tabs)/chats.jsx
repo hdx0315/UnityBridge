@@ -8,7 +8,6 @@ import { getDocs, query, where } from 'firebase/firestore';
 import { usersRef } from '../../lib/firebase';
 
 const Chats = () => {
-
   const { user } = useAuthContext()
 
   const [users, setUsers] = useState([])
@@ -51,6 +50,7 @@ const Chats = () => {
         )}
         </View>
         
+
     </SafeAreaView>
   );
 };
