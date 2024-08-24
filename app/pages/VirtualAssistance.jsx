@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet, Button } from "react-native";
 import * as Speech from 'expo-speech'
-import { WebView } from 'react-native-webview'
 import { useRef } from "react";
 import { Audio } from "expo-av";
 
