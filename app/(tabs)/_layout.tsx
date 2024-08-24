@@ -61,6 +61,9 @@ const TabsLayout = () => {
             ),
           }}
         />
+
+
+        {/*
         <Tabs.Screen
           name='calls'
           options={{
@@ -88,6 +91,25 @@ const TabsLayout = () => {
                 tname="Camera"
                 focused={focused}
                 name="camera-sharp"
+                size={24} 
+              />
+            ),
+          }}
+        />
+*/}
+
+       
+<Tabs.Screen
+          name='VirtualAssistance'
+          options={{
+            title: 'Virtual-Assistant',
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                color={color}
+                tname="Virtual-Assistant"
+                focused={focused}
+                name="logo-amplify"
                 size={24} 
               />
             ),
