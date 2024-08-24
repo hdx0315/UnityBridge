@@ -17,19 +17,21 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@react-native-async-storage/async-storage": "^1.24.0",
+    "@react-native-community/voice": "^1.1.9",
+    "@react-native-voice/voice": "^3.2.4",
     "@react-navigation/native": "^6.0.2",
-    
-    "expo": "~51.0.22",
-    "expo-camera": "~15.0.14",
-    
+    "@wdragon/react-native-voice": "^3.3.11",
+    "axios": "^1.7.4",
     "babel-plugin-inline-dotenv": "^1.7.0",
     "dotenv": "^16.4.5",
-    
-    
+    "expo": "~51.0.22",
+    "expo-av": "~14.0.7",
+    "expo-camera": "~15.0.14",
     "expo-constants": "~16.0.2",
     "expo-font": "~12.0.9",
     "expo-linking": "~6.3.1",
     "expo-router": "~3.5.18",
+    "expo-speech": "~12.0.2",
     "expo-splash-screen": "~0.27.5",
     "expo-status-bar": "~1.12.1",
     "expo-system-ui": "~3.0.7",
