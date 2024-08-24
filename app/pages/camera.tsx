@@ -6,6 +6,7 @@ import CustomButton from '../../components/CustomButton'
 import { SafeAreaView } from 'react-native';
 import axios from 'axios';
 import { router , useLocalSearchParams} from 'expo-router';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
   const [permission, requestPermission] = useCameraPermissions();
   const cameraRef = useRef(null);
   const [character , setCharacter] = useState('');
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("Test Message");
   const [isCameraReady , setiscameraReady] = useState(false)
   const [isCapturing, setIsCapturing] = useState(false);
   const intervalIdRef = useRef(null);
@@ -103,21 +104,21 @@ export default function App() {
   return (
     <SafeAreaView className="flex-1 justify-center">
       <CameraView className="flex-1" facing={facing} onCameraReady={onCameraReady} ref={cameraRef}>
-        <View className="flex-1 flex-row bg-transparent m-16">
-          <TouchableOpacity className="flex-1 self-end items-center" onPress={toggleCameraFacing}>
-            <Text className="text-xl font-bold text-white">Flip Camera</Text>
+        <View className="flex-1 flex-row justify-between bg-transparent mx-4">
+          <TouchableOpacity className="flex-1 self-end items-center bg-opacity-50 blur-3xl rounded-full" onPress={toggleCameraFacing}>
+            <MaterialCommunityIcons name="camera-flip-outline" size={40} color="#00ff1e" />
           </TouchableOpacity>
 
-          <TouchableOpacity className="flex-1 self-end items-center" onPress={startCapture}>
-            <Text className="text-xl font-bold text-white">Start</Text>
+          <TouchableOpacity className="flex-1 self-end items-center bg-opacity-100 blur-3xl  rounded-full" onPress={startCapture}>
+          <MaterialCommunityIcons name="record-circle-outline" size={40} color="#00ff1e" />
           </TouchableOpacity>
 
-          <TouchableOpacity className="flex-1 self-end items-center" onPress={stopCapture}>
-            <Text className="text-xl font-bold text-white">Stop</Text>
+          <TouchableOpacity className="flex-1 self-end items-center bg-opacity-100 blur-3xl  rounded-full" onPress={stopCapture}>
+          <MaterialCommunityIcons name="stop" size={40} color="#00ff1e" />
           </TouchableOpacity>
 
         </View>
-        <View className="flex-row justify-center border-2 border-secondary rounded-lg m-2">
+        <View className="flex-row justify-center border-2 border-secondary rounded-lg m-4 h-10">
           <Text className="text-xl font-bold text-white">
             {message}
           </Text>
