@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { images } from '../constants';
+import { getRoomId } from '../utils/common' 
+import { collection, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { db } from '../lib/firebase';
 
-const ChatItem = ({ item, router, noBorder }) => {
+const ChatItem = ({ item, router, noBorder, currentUser }) => {
+    const [lastMessage, setLastMessage] = useState(undefined)
+
+    useEffect(() => {
+        let roomId = getRoomId(currentUser?.userId, item?.userId)
+        const docRef = doc(db, 'rooms', roomId)
+        const messagesRef = collection(docRef, 'messages')
+        const q = query(messagesRef, orderBy('createdAt', 'desc'))
+
+        let unsub = onSnapshot(q, (snapshot) => {
+            let allMessages = snapshot.docs.map((doc) => {
+                return doc.data()
+            })
+            setLastMessage(allMessages[0] ? allMessages[0] : null)
+        })
+
+        return unsub;
+    }, [])
+
+    console.log('last message', lastMessage)
+
     const openChatRoom = () => {
         router.push({pathname: 'pages/InboxChat', params: item})
     }
