@@ -29,6 +29,21 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
     const openChatRoom = () => {
         router.push({pathname: 'pages/InboxChat', params: item})
     }
+
+    const renderTime = () => {
+        return 'Time'
+    }
+
+    const renderLastMessage = () => {
+        if (typeof lastMessage === 'undefined') return 'Loading...'
+        if (lastMessage) {
+            if (currentUser?.userId == lastMessage?.userId) return "You: " + lastMessage?.text
+            return lastMessage?.text
+        } else {
+            return 'Say Hi!!!'
+        }
+    }
+
     return (
         <TouchableOpacity
             className={`pt-4 pb-4 flex-row items-center ${noBorder ? "" : 'border-b-2 border-green-800'}`}
@@ -43,11 +58,11 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
                 <Text className="text-lg text-white font-psemibold">
                     {item?.username}
                 </Text>
-                <Text className="text-sm text-gray-400 ml-2">Last Message</Text>
+                <Text className="text-sm text-gray-400 ml-2">{renderLastMessage()}</Text>
             </View>
             <View className="ml-auto pr-2">
                 <Text className="text-sm text-gray-400">
-                    22:10
+                {renderTime()}
                 </Text>
             </View>
         </TouchableOpacity>
