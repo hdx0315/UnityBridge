@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeHeader from '../../components/HomeHeader';
 import { useAuthContext } from '../../contexts/AuthContext';
@@ -40,7 +40,7 @@ const Chats = () => {
       </View>
 
         {/* //render chats from DB and map them for ENTRT s.  */}
-        <View className='flex-1 bg-bprimary'>
+        <ScrollView className='flex-1 bg-bprimary'>
         {users.length > 0 ? (
           <ChatList users={users} currentUser={user}/>
         ):(
@@ -48,7 +48,7 @@ const Chats = () => {
             <ActivityIndicator size='large' />
           </View>
         )}
-        </View>
+        </ScrollView>
         
 
     </SafeAreaView>
