@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { images } from '../constants';
-import { getRoomId } from '../utils/common' 
+import { formatDate, getRoomId } from '../utils/common' 
 import { collection, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 
@@ -31,7 +31,11 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
     }
 
     const renderTime = () => {
-        return 'Time'
+        if (lastMessage) {
+            let date = new Date(lastMessage?.createdAt?.seconds * 1000);
+            return formatDate(date);
+        }
+        return '';
     }
 
     const renderLastMessage = () => {
