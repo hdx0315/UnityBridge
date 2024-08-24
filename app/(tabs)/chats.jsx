@@ -40,6 +40,7 @@ const Chats = () => {
       </View>
 
         {/* //render chats from DB and map them for ENTRT s.  */}
+        
         <ScrollView className='flex-1 bg-bprimary'>
         {users.length > 0 ? (
           <ChatList users={users} currentUser={user}/>
