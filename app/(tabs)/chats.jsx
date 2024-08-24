@@ -42,7 +42,7 @@ const Chats = () => {
         {/* //render chats from DB and map them for ENTRT s.  */}
         <View className='flex-1 bg-bprimary'>
         {users.length > 0 ? (
-          <ChatList users={users}/>
+          <ChatList users={users} currentUser={user}/>
         ):(
           <View className="flex-1 items-center">
             <ActivityIndicator size='large' />

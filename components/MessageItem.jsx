@@ -8,6 +8,7 @@ const MessageItem = ({message, currentUser}) => {
                 <View className='w-4/5'>
                 <View className='flex self-end p-3 rounded-lg bg-green-700'>
                 <Text className="text-white text-lg">{message.text}</Text>
+                {/* test line */}
                 </View>
                 </View>
             </View>
