@@ -27,17 +27,40 @@ const VirtualAssistance = () => {
     async function stopRecording(){
         setRecording(undefined);
 
-        await recording.stopAndUnloadAsync();
-        let allRecordings = [...recordings];
-        const { sound, status } = await recording.createNewLoadedSoundAsync();
-        allRecordings.push({
-        sound: sound,
-        duration: getDurationFormatted(status.durationMillis),
-        file: recording.getURI()
-        
-        });
+    await recording.stopAndUnloadAsync();
+    const { sound, status } = await recording.createNewLoadedSoundAsync();
+    const uri = recording.getURI();
+    
+    let allRecordings = [...recordings];
+    allRecordings.push({
+      sound: sound,
+      duration: getDurationFormatted(status.durationMillis),
+      file: uri,
+    });
 
-        setRecordings(allRecordings);
+    setRecordings(allRecordings);
+
+    // Upload the audio file to the backend
+    const formData = new FormData();
+    formData.append("audio", {
+      uri: uri,
+      name: `recording-${Date.now()}.m4a`,
+      type: "audio/m4a",
+    });
+
+    try {
+      const response = await fetch("http://your-backend-endpoint/upload", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      const responseJson = await response.json();
+      console.log("Upload successful:", responseJson);
+    } catch (err) {
+      console.error("Upload failed:", err);
+    }
     }
 
     function getDurationFormatted(milliseconds) {
