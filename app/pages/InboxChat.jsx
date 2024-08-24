@@ -12,8 +12,6 @@ import { db } from '../../lib/firebase';
 import { addDoc, collection, doc, onSnapshot, orderBy, query, setDoc, Timestamp } from 'firebase/firestore';
 import { getRoomId } from '../../utils/common';
 
-import VirtualAssistance from './VirtualAssistance';
-
 const InboxChat = () => {
   const item = useLocalSearchParams()
 
@@ -135,7 +133,6 @@ const InboxChat = () => {
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
-
     </SafeAreaView>
   );
 };

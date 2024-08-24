@@ -1,11 +1,10 @@
-import { View, Text, Image, SafeAreaView } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import React from 'react';
 import { icons } from '../constants';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuthContext } from '../contexts/AuthContext';
-import VirtualAssistance from '../app/pages/VirtualAssistance';
 
 const HomeHeader = ({title}) => {
   const { logout } = useAuthContext()
@@ -21,10 +20,6 @@ const HomeHeader = ({title}) => {
         <Text className="pl-4 pt-4 pb-4 text-xl font-pbold text-white">
           Unity {title}
         </Text>
-      </View>
-
-      <View className="flex-row justify-center">
-        <VirtualAssistance></VirtualAssistance>
       </View>
 
       <View className="mr-4">
