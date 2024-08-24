@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import * as Speech from 'expo-speech'
+
 
 const VirtualAssistance = () => {
-    const onButtonPress1 = () => {
-        console.log("button pressed")
-    }
+    const [recognizedText, setRecognizedText] = useState('')
+    
 
-    const virtualAssitanceMainFunction = () => {
-        
+
+    const speak = () => {
+        const thingToSay = "i am okay now because i have intialize expo speech";
+        Speech.speak(thingToSay);
+        console.log("speech function works")
     }
 
     return (
     <View>
-      <TouchableOpacity style={styles.button} onPress={onButtonPress1} className="bg-green-700">
+      <TouchableOpacity style={styles.button} onPress={speak} className="bg-green-700">
         <Text style={styles.buttonText}>Virtual Assistance</Text>
       </TouchableOpacity>
     </View>
