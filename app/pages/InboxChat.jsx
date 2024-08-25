@@ -5,17 +5,23 @@ import React, { useEffect, useRef, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ChatHeader from '../../components/ChatHeader';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams , router} from 'expo-router';
 import MessagesList from '../../components/MessagesList';
 import { useAuthContext } from '../../contexts/AuthContext'
 import { db } from '../../lib/firebase';
 import { addDoc, collection, doc, onSnapshot, orderBy, query, setDoc, Timestamp } from 'firebase/firestore';
 import { getRoomId } from '../../utils/common';
+import Feather from '@expo/vector-icons/Feather';
+import Camera from './camera';
+
+import { useCameraMsgStore } from '../../stores/cameraMsgStore';
 
 const InboxChat = () => {
   const item = useLocalSearchParams()
 
   const { user } = useAuthContext()
+
+  const cameraMsg = useCameraMsgStore(state => state.message);
 
   const [messages, setMessages] = useState([]);
 
@@ -30,6 +36,17 @@ const InboxChat = () => {
   const textRef = useRef('')
     const inputRef = useRef(null)
     const scrollViewRef = useRef(null)
+
+
+  // Update the TextInput value when the cameraMsg changes
+  useEffect(() => {
+    if (cameraMsg && inputRef.current) {
+      inputRef.current.setNativeProps({ text: cameraMsg });
+      textRef.current = cameraMsg;
+    }
+  }, [cameraMsg]);
+
+  
 
   useEffect(() => {
     createRoomIfNotExists()
@@ -97,6 +114,11 @@ const InboxChat = () => {
     // }
   };
 
+  const handleCameraOpen = () => {
+    console.log('handleCameraOpen');
+    router.push('/pages/camera')
+  }
+
   useEffect(() => {
     updateScrollView()
 }, [messages])
@@ -128,8 +150,11 @@ const InboxChat = () => {
             multiline={true}
             className="flex-1 h-10 border border-green-500 rounded-xl m-2 pl-4 text-white text-lg"
           />
-          <TouchableOpacity title="Send" onPress={handleSendMessage} className="mr-2">
-            <FontAwesome name="send" size={30} color="#22c55e" />
+          <TouchableOpacity title="Send" onPress={handleSendMessage} className="mr-4">
+            <FontAwesome name="send" size={24} color="#22c55e" />
+          </TouchableOpacity>
+          <TouchableOpacity title="Send" onPress={handleCameraOpen} className="mr-2">
+            <Feather name="camera" size={24} color="#22c55e" />
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

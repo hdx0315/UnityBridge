@@ -107,7 +107,7 @@ const SignUp = () => {
             title="Register"
             handlePress={submit}
             containerStyles="w-full"
-            textStyles="text-black font-psemibold"
+            textStyles="text-black font-psemibold text-xl"
             isLoading={isSubmitting}
           />
 

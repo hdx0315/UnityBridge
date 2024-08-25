@@ -13,6 +13,7 @@ const ChatList = ({ users, currentUser }) => {
                 contentContainerStyle={{ flex: 1 }}
                 keyExtractor={(item) => Math.random()}
                 showsVerticalScrollIndicator={false}
+                scrollEnabled={false}
                 renderItem={({ item, index }) =>
                     <ChatItem
                         noBorder={index + 1 == users.length}
@@ -25,5 +26,6 @@ const ChatList = ({ users, currentUser }) => {
         </View>
   )
 }
+
 
 export default ChatList
