@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, Text, StyleSheet, Button } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, Button, SafeAreaView } from "react-native";
 import * as Speech from 'expo-speech'
 import { useRef } from "react";
 import { Audio } from "expo-av";
 
 
 const VirtualAssistance = () => {
+
+  /*
 
     const [recording, setRecording] = useState();
     const [recordings, setRecordings] = useState([]);
@@ -93,6 +95,10 @@ const VirtualAssistance = () => {
     }
 
     return (
+
+
+{/*
+      
     // <View>
     //   <TouchableOpacity style={styles.button} onPress={speak} className="bg-green-700">
     //     <Text style={styles.buttonText}>Virtual Assistance</Text>
@@ -105,8 +111,18 @@ const VirtualAssistance = () => {
 
             <Button title={recordings.length > 0 ? 'clear Recordings' : ''} onPress={clearrecordings} ></Button>
         </View>
-    )
+
+*/
+
+  return (
+    <SafeAreaView className="min-h-screen">
+
+    </SafeAreaView>
+  )
+  
 }
+    
+{/*
 
 const styles = StyleSheet.create({
     overlay: {
@@ -131,5 +147,5 @@ const styles = StyleSheet.create({
         fontSize:  16
     }
 })
-
+*/}
 export default VirtualAssistance;

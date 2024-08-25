@@ -53,7 +53,6 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
     
     const proPic = proPics[Math.floor(Math.random() * proPics.length)];
 
-    console.log(proPic);
 
     return (
         <TouchableOpacity
