@@ -62,10 +62,10 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
                 <Text className="text-lg text-white font-psemibold">
                     {item?.username}
                 </Text>
-                <Text className="text-sm text-gray-400 ml-2">{renderLastMessage()}</Text>
+                <Text className="text-sm text-gray-200 ml-2">{renderLastMessage()}</Text>
             </View>
             <View className="ml-auto pr-2">
-                <Text className="text-sm text-gray-400">
+                <Text className="text-sm text-gray-300">
                 {renderTime()}
                 </Text>
             </View>

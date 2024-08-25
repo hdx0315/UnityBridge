@@ -24,12 +24,12 @@ const Entry = ({ profilePic, name, msgPrev, clType, timestamp, onPress }) => {
         {clType ? (
           <Text className="text-sm text-gray-400 ml-2">{clType}</Text>
         ) : (
-          <Text className="text-sm text-gray-400 ml-2">{msgPrev}</Text>
+          <Text className="text-sm text-gray-300 ml-2">{msgPrev}</Text>
         )}
       </View>
 
       <View className="ml-auto pr-2">
-        <Text className="text-sm text-gray-400">
+        <Text className="text-sm text-red-500">
           {timestamp}
         </Text>
       </View>
