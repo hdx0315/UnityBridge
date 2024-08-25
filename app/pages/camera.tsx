@@ -7,14 +7,14 @@ import { SafeAreaView } from 'react-native';
 import axios from 'axios';
 import { router , useLocalSearchParams} from 'expo-router';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-
+import {useCameraMsgStore} from '../../stores/cameraMsgStore';
 
 export default function App() {
   const [facing, setFacing] = useState<CameraType>('back');
   const [permission, requestPermission] = useCameraPermissions();
   const cameraRef = useRef(null);
   const [character , setCharacter] = useState('');
-  const [message, setMessage] = useState("Test Message");
+  const [message, setMessage] = useState("");
   const [isCameraReady , setiscameraReady] = useState(false)
   const [isCapturing, setIsCapturing] = useState(false);
   const intervalIdRef = useRef(null);
@@ -54,12 +54,17 @@ export default function App() {
     } , 3000);
   };
 
+
+  const setCameraMessage = useCameraMsgStore(state => state.setCameraMessage);
+
   const stopCapture = () => {
     setIsCapturing(false);
     if(intervalIdRef.current){
       clearInterval(intervalIdRef.current);
       intervalIdRef.current = null;
     }
+    setCameraMessage(message);
+
   }
 
   useEffect(() => {

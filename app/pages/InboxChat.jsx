@@ -14,10 +14,14 @@ import { getRoomId } from '../../utils/common';
 import Feather from '@expo/vector-icons/Feather';
 import Camera from './camera';
 
+import { useCameraMsgStore } from '../../stores/cameraMsgStore';
+
 const InboxChat = () => {
   const item = useLocalSearchParams()
 
   const { user } = useAuthContext()
+
+  const cameraMsg = useCameraMsgStore(state => state.message);
 
   const [messages, setMessages] = useState([]);
 
@@ -32,6 +36,17 @@ const InboxChat = () => {
   const textRef = useRef('')
     const inputRef = useRef(null)
     const scrollViewRef = useRef(null)
+
+
+  // Update the TextInput value when the cameraMsg changes
+  useEffect(() => {
+    if (cameraMsg && inputRef.current) {
+      inputRef.current.setNativeProps({ text: cameraMsg });
+      textRef.current = cameraMsg;
+    }
+  }, [cameraMsg]);
+
+  
 
   useEffect(() => {
     createRoomIfNotExists()
