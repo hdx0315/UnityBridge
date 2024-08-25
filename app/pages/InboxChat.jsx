@@ -76,7 +76,9 @@ const InboxChat = () => {
     let roomId = getRoomId(user?.userId, item?.userId)
     await setDoc(doc(db, 'rooms', roomId), {
       roomId,
-      createdAt: Timestamp.fromDate(new Date())
+      createdAt: Timestamp.fromDate(new Date()),
+      user:user?.userId,
+      item: item,
     })
     // console.log('Room created', roomId);
 

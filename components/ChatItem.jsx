@@ -7,6 +7,7 @@ import { db } from '../lib/firebase';
 
 import proPics from '../constants/proPic';
 
+
 const ChatItem = ({ item, router, noBorder, currentUser }) => {
     const [lastMessage, setLastMessage] = useState(undefined)
 
@@ -27,7 +28,7 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
         return unsub;
     }, [])
 
-    console.log('last message', lastMessage)
+//    console.log('last message', lastMessage)
 
     const openChatRoom = () => {
         router.push({pathname: 'pages/InboxChat', params: item})
@@ -55,6 +56,7 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
 
 
     return (
+        lastMessage?(
         <TouchableOpacity
             className={`pt-4 pb-4 flex-row items-center ${noBorder ? "" : 'border-b-2 border-green-800'}`}
             onPress={openChatRoom}
@@ -76,7 +78,8 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
                 </Text>
             </View>
         </TouchableOpacity>
-    );
+        ): null
+    ) ;
 };
 
 export default ChatItem;
