@@ -48,7 +48,7 @@ const VirtualAssistance = () => {
     });
 
     try {
-      const response = await fetch("http://your-backend-endpoint/upload", {
+      const response = await fetch("http://backend-endpoint/upload", {
         method: "POST",
         body: formData,
         headers: {
