@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import HomeHeader from '../../components/HomeHeader';
+
 import { useAuthContext } from '../../contexts/AuthContext';
 import ChatList from '../../components/ChatList';
 import { getDocs, query, where } from 'firebase/firestore';
 import { usersRef } from '../../lib/firebase';
 
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { router } from 'expo-router';
 
 const Chats = () => {
@@ -32,20 +31,11 @@ const Chats = () => {
     setUsers(data)
   }
 
-  const handleNewChat = () => {
-    router.push('pages/newChats')
-  }
-
 
   // console.log('User Data', user);
 
   return (
     <SafeAreaView className="flex-1 bg-bprimary">
-      <View>
-        <HomeHeader 
-          title="Chats" 
-        />
-      </View>
 
         {/* //render chats from DB and map them for ENTRT s.  */}
         
@@ -59,12 +49,6 @@ const Chats = () => {
         )}
 
         </ScrollView>
-          
-          <TouchableOpacity 
-            className="absolute bottom-4 right-4"
-            onPress={handleNewChat}>
-            <MaterialCommunityIcons name="chat-plus-outline" size={60} color="#00ff1e" />
-          </TouchableOpacity>
         
 
     </SafeAreaView>
