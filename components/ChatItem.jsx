@@ -5,6 +5,8 @@ import { formatDate, getRoomId } from '../utils/common'
 import { collection, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 
+import proPics from '../constants/proPic';
+
 const ChatItem = ({ item, router, noBorder, currentUser }) => {
     const [lastMessage, setLastMessage] = useState(undefined)
 
@@ -20,6 +22,7 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
             })
             setLastMessage(allMessages[0] ? allMessages[0] : null)
         })
+
 
         return unsub;
     }, [])
@@ -47,6 +50,10 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
             return 'Say Hi!!!'
         }
     }
+    
+    const proPic = proPics[Math.floor(Math.random() * proPics.length)];
+
+    console.log(proPic);
 
     return (
         <TouchableOpacity
@@ -54,7 +61,7 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
             onPress={openChatRoom}
         >
             <Image
-                source={images.profile}
+                source={proPic}
                 resizeMode="contain"
                 className="w-[50px] h-[50px] ml-2 rounded-full"
             />
