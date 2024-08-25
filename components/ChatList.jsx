@@ -27,4 +27,5 @@ const ChatList = ({ users, currentUser }) => {
   )
 }
 
+
 export default ChatList
