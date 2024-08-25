@@ -15,12 +15,6 @@ const SettingsLayout = () => {
           }}
         />
         <Stack.Screen
-          name='CallDetails'
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
           name='profile'
           options={{
             headerShown: false,
@@ -32,12 +26,24 @@ const SettingsLayout = () => {
             headerShown: false,
           }}
         />
-      <Stack.Screen
-          name='search'
-          options={{
-            headerShown: false,
-          }}
-        />
+        <Stack.Screen
+            name='search'
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+              name='camera'
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+                name='newChats'
+                options={{
+                  headerShown: false,
+                }}
+              />
       </Stack>
 
 

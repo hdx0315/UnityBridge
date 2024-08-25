@@ -88,8 +88,8 @@ const SignIn = () => {
           <CustomButton
             title="Sign In"
             handlePress={submit}
-            containerStyles="w-full"
-            textStyles="text-black font-psemibold"
+            containerStyles="w-full text-2xl"
+            textStyles="text-black font-psemibold text-xl"
             isLoading={isSubmitting}
           />
 
