@@ -26,6 +26,7 @@ const VirtualAssistance = () => {
         getUsers()
       }
     }, [])
+    
 
     const getUsers = async () => {
       const q = query(usersRef, where('userId', '!=', user?.uid))
