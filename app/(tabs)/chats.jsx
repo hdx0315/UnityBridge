@@ -5,7 +5,7 @@ import HomeHeader from '../../components/HomeHeader';
 import { useAuthContext } from '../../contexts/AuthContext';
 import ChatList from '../../components/ChatList';
 import { getDocs, query, where } from 'firebase/firestore';
-import { usersRef } from '../../lib/firebase';
+import { usersRef, roomRef } from '../../lib/firebase';
 
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { router } from 'expo-router';
@@ -13,11 +13,13 @@ import { router } from 'expo-router';
 const Chats = () => {
   const { user } = useAuthContext()
 
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]) 
+  const [chats, setChats] = useState([])
 
   useEffect(() => {
     if (user?.uid) {
       getUsers()
+     // getChats()
     }
   }, [])
 
@@ -31,6 +33,20 @@ const Chats = () => {
     // console.log('got data:', data);
     setUsers(data)
   }
+
+  const getChats = async () => {
+    const qr = query(roomRef, where('user', 'in', user?.uid));
+    const querySnapshot = await getDocs(qr);
+    let chatRooms = [];
+    querySnapshot.forEach((doc) => {
+      chatRooms.push({ ...doc.data(), id: doc.id });
+    });
+    // Now you can use chatRooms array
+    // console.log('Chat Rooms:', chatRooms);
+    setChats(chatRooms);
+    console.log('Chatrooms:'+ chats);
+  }
+  
 
   const handleNewChat = () => {
     router.push('pages/newChats')
