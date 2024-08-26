@@ -1,16 +1,95 @@
-import React, { useState } from "react";
-import { View, TouchableOpacity, Text, StyleSheet, Button, SafeAreaView } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, TouchableOpacity, Text, StyleSheet, Button, Alert } from "react-native";
 import * as Speech from 'expo-speech'
 import { useRef } from "react";
 import { Audio } from "expo-av";
+import Voice from '@react-native-voice/voice'
 
 
 const VirtualAssistance = () => {
+  
+    //extracting users 
+    const [users, setUsers] = useState([])
 
-  /*
-
+    //state changes for text - to speech recognition
     const [recording, setRecording] = useState();
     const [recordings, setRecordings] = useState([]);
+
+    //state changes for speech to text detection services 
+    const [recognized, setRecognized] = useState('');
+    const [started, setStarted] = useState(false)
+    const [results , setResults] = useState([])
+    const [wantedUser, setWantedUser] = useState({})
+
+    useEffect(() => {
+      if (user?.uid) {
+        getUsers()
+      }
+    }, [])
+    
+
+    const getUsers = async () => {
+      const q = query(usersRef, where('userId', '!=', user?.uid))
+      const querySnapshot = await getDocs(q)
+      let data = [];
+      querySnapshot.forEach((doc) => {
+        data.push({...doc.data()})
+      })
+      // console.log('got data:', data);
+      setUsers(data)
+    }
+
+    const onspeechStart = (e) => {
+      setStarted(true)
+      console.log("Speech has started : ")   //this is for testing purposes
+    };
+
+    const onSpeechRecognized = (e) => {
+      setRecognized(true);
+      console.log("speech recognized")
+    }
+
+    const onSpeechResults = (e) => {
+      setResults(e.value);
+      handleCommand(e.value);
+    }
+
+    const handleCommand = (commands) => {
+      const command = commands[0].toLowerCase();
+
+      const chatCommand = /open chat  (\w+)/;
+      const sendMssageCommand = /send message (\w+)/;
+
+      const sendMessageMatch = command.match(sendMssageCommand);
+      const match = command.match(chatCommand); //string
+
+      if(match){
+        const chatname = match[1]
+        const user = users.find(user => user?.username == 'match')
+        setWantedUser(user)
+        router.push({pathname: 'pages/InboxChat', params: user})
+      }else {
+        Alert.alert("command not recognized");
+      }
+
+      if(sendMessageMatch){
+        const message = match[1];
+        router.push({pathname: 'pages/InboxChat', params: user})
+      }else {
+        console.log("command didnt reongnized according to the regEx")
+      }
+
+      if(command.includes('give me new messages')){
+        Alert.alert("command triggered");
+
+      }else if(command.includes('send message i wan to do this now ')){
+        Alert.alert("a another command triggered");
+        
+
+      }else {
+        Alert.alert('nothing found')
+      }
+    }
 
     async function startRecording(){
         try {
@@ -95,10 +174,6 @@ const VirtualAssistance = () => {
     }
 
     return (
-
-
-{/*
-      
     // <View>
     //   <TouchableOpacity style={styles.button} onPress={speak} className="bg-green-700">
     //     <Text style={styles.buttonText}>Virtual Assistance</Text>
@@ -111,18 +186,8 @@ const VirtualAssistance = () => {
 
             <Button title={recordings.length > 0 ? 'clear Recordings' : ''} onPress={clearrecordings} ></Button>
         </View>
-
-*/
-
-  return (
-    <SafeAreaView className="min-h-screen">
-
-    </SafeAreaView>
-  )
-  
+    )
 }
-    
-{/*
 
 const styles = StyleSheet.create({
     overlay: {
@@ -147,5 +212,5 @@ const styles = StyleSheet.create({
         fontSize:  16
     }
 })
-*/}
+
 export default VirtualAssistance;
