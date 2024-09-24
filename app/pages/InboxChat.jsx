@@ -139,7 +139,7 @@ const InboxChat = () => {
       <View className='flex-1 justify-between overflow-visible'>
         <MessagesList messages={messages} currentUser={user} scrollViewRef={scrollViewRef}/>
       </View>
-      <KeyboardAvoidingView behavior="padding" className="bg-primary" >
+      <KeyboardAvoidingView behavior="padding" className="bg-bprimary" >
         <View className="flex-row items-center pr-2 pb-2 bg-emerald-950 text-zinc-400">
           <TextInput
           // ref={textInputRef}

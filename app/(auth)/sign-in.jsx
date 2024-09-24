@@ -52,7 +52,7 @@ const SignIn = () => {
   }
 
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView className="bg-bprimary h-full">
       <ScrollView>
         <View className="w-full justify-center min-h-[85vh] px-4 my-6">
           <Image
@@ -61,7 +61,7 @@ const SignIn = () => {
             className="w-[100px] h-[100px]"
           />
 
-          <Text className="text-2xl text-white text-semibold mt-10 mb-8 font-psemibold">
+          <Text className="text-2xl text-t_ text-semibold mt-10 mb-8 font-psemibold">
             Log In to UnityBridge
           </Text>
 

@@ -9,7 +9,7 @@ import { useAuthContext } from '../contexts/AuthContext'
 const App = () => {
 
   return (
-    <SafeAreaView className="bg-green-950 h-full">
+    <SafeAreaView className="bg-bprimary h-full">
       
       <ScrollView contentContainerStyle={{height:'100%'}}>
 
@@ -22,7 +22,7 @@ const App = () => {
           />
 
           <View className="relative mt-5">
-            <Text className="text-3xl text-white font-bold text-center">
+            <Text className="text-3xl text-t_primary font-bold text-center">
               Welcome to {''}
               <Text className="text-secondary">UnityBridge </Text>
             </Text>
