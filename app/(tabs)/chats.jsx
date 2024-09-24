@@ -79,7 +79,7 @@ const Chats = () => {
           <TouchableOpacity 
             className="absolute bottom-4 right-4"
             onPress={handleNewChat}>
-            <MaterialCommunityIcons name="chat-plus-outline" size={60} color="#00ff1e" />
+            <MaterialCommunityIcons name="chat-plus-outline" size={60} color="#06b6d4" />
           </TouchableOpacity>
         
 
