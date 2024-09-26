@@ -24,17 +24,17 @@ const profile = ({profilePic, name, email}) => {
           </Text>
         </View>
 
-        <View className="pl-4">
-          <Text className="text-white font-bold text-lg pt-8">
+        <View className="pl-4 text-t_primary">
+          <Text className=" font-bold text-lg pt-8">
             email
           </Text>
-          <Text className="text-gray-300 text-lg pt-2 pl-4">
+          <Text className="t text-lg pt-2 pl-4">
             email@example.com
           </Text>
-          <Text className="text-white font-bold text-lg pt-8">
+          <Text className="font-bold text-lg pt-8">
             Phone number
           </Text>
-          <Text className="text-gray-300 text-lg pt-2 pl-4">
+          <Text className=" text-lg pt-2 pl-4">
             Phone number
           </Text>
         </View>

@@ -140,23 +140,23 @@ const InboxChat = () => {
         <MessagesList messages={messages} currentUser={user} scrollViewRef={scrollViewRef}/>
       </View>
       <KeyboardAvoidingView behavior="padding" className="bg-bprimary" >
-        <View className="flex-row items-center pr-2 pb-2 bg-emerald-950 text-zinc-400">
+        <View className="flex-row items-center pr-2 pb-2 bg-bprimary-500 text-t_primary">
           <TextInput
           // ref={textInputRef}
           // onChangeText={(text) => (messageRef.current = text)}
             ref={inputRef}
             onChangeText={(text) => (textRef.current = text)}
             placeholder="Type a message..."
-            placeholderTextColor="#22c55e"
-            selectionColor="#22c55e"
+            placeholderTextColor="#773825"
+            selectionColor="#773825"
             multiline={true}
-            className="flex-1 h-10 border border-green-500 rounded-xl m-2 pl-4 text-white text-lg"
+            className="flex-1 h-10 border border-bprimary-900 rounded-xl m-2 pl-4 e text-lg text-yellow-950"
           />
           <TouchableOpacity title="Send" onPress={handleSendMessage} className="mr-4">
-            <FontAwesome name="send" size={24} color="#22c55e" />
+            <FontAwesome name="send" size={24} color="#773825" />
           </TouchableOpacity>
           <TouchableOpacity title="Send" onPress={handleCameraOpen} className="mr-2">
-            <Feather name="camera" size={24} color="#22c55e" />
+            <Feather name="camera" size={24} color="#773825" />
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

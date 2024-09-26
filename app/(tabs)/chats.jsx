@@ -19,7 +19,7 @@ const Chats = () => {
   useEffect(() => {
     if (user?.uid) {
       getUsers()
-     // getChats()
+      getChats()
     }
   }, [])
 
@@ -35,7 +35,7 @@ const Chats = () => {
   }
 
   const getChats = async () => {
-    const qr = query(roomRef, where('user', 'in', user?.uid));
+    const qr = query(roomRef, where('user', '!=', user?.uid));
     const querySnapshot = await getDocs(qr);
     let chatRooms = [];
     querySnapshot.forEach((doc) => {
@@ -79,7 +79,7 @@ const Chats = () => {
           <TouchableOpacity 
             className="absolute bottom-4 right-4"
             onPress={handleNewChat}>
-            <MaterialCommunityIcons name="chat-plus-outline" size={60} color="#06b6d4" />
+            <MaterialCommunityIcons name="chat-plus-outline" size={60} color="#773825" />
           </TouchableOpacity>
         
 

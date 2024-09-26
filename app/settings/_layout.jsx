@@ -24,7 +24,7 @@ const SettingsLayout = () => {
 
 
       <StatusBar
-        backgroundColor="#052e16"
+        backgroundColor="#06b6d4"
         style='light'
       />
     </>

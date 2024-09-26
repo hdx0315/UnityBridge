@@ -27,7 +27,7 @@ const profileSettings = (profilePic, name, email, phoneNo) => {
   })
 
   return (
-      <SafeAreaView className="bg-bprimary">
+      <SafeAreaView className="bg-bprimary text-t_primary">
         <ScrollView className="bg-bprimary min-h-full flex-col ">
           <View className="w-full items-center justify-center mt-16">
             <Image
