@@ -115,7 +115,7 @@ const VirtualAssistance = () => {
 */
 
   return (
-    <SafeAreaView className="min-h-screen bg-primary">
+    <SafeAreaView className="min-h-screen bg-bprimary">
 
     </SafeAreaView>
   )

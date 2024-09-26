@@ -58,7 +58,7 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
     return (
         lastMessage?(
         <TouchableOpacity
-            className={`pt-4 pb-4 flex-row items-center ${noBorder ? "" : 'border-b-2 border-green-800'}`}
+            className={`pt-4 pb-4 flex-row items-center ${noBorder ? "" : 'border-b-2 border-secondary'}`}
             onPress={openChatRoom}
         >
             <Image
@@ -67,13 +67,13 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
                 className="w-[50px] h-[50px] ml-2 rounded-full"
             />
             <View className="flex-1 flex-col ml-2">
-                <Text className="text-lg text-white font-psemibold">
+                <Text className="text-lg text-t_primary font-psemibold">
                     {item?.username}
                 </Text>
-                <Text className="text-sm text-gray-200 ml-2">{renderLastMessage()}</Text>
+                <Text className="text-sm text-t_primary ml-2">{renderLastMessage()}</Text>
             </View>
             <View className="ml-auto pr-2">
-                <Text className="text-sm text-gray-300">
+                <Text className="text-sm text-t_primary">
                 {renderTime()}
                 </Text>
             </View>

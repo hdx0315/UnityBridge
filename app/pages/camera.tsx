@@ -81,7 +81,7 @@ export default function App() {
   if (!permission.granted) {
     // Camera permissions are not granted yet.
     return (
-      <View className="flex-1 justify-center bg-primary px-2">
+      <View className="flex-1 justify-center bg-bprimary px-2">
         <Text className="text-center pb-2.5 text-secondary text-2xl">We need your permission to access the camera</Text>
         <View className="flex-row justify-center my-4">
         <Pressable  onPress={requestPermission} className="items-center justify-center py-3 px-8 rounded-full max-w-[300px] bg-secondary p-6">
@@ -111,20 +111,20 @@ export default function App() {
       <CameraView className="flex-1" facing={facing} onCameraReady={onCameraReady} ref={cameraRef}>
         <View className="flex-1 flex-row justify-between bg-transparent mx-4">
           <TouchableOpacity className="flex-1 self-end items-center bg-opacity-50 blur-3xl rounded-full" onPress={toggleCameraFacing}>
-            <MaterialCommunityIcons name="camera-flip-outline" size={40} color="#00ff1e" />
+            <MaterialCommunityIcons name="camera-flip-outline" size={40} color="#06b6d4" />
           </TouchableOpacity>
 
           <TouchableOpacity className="flex-1 self-end items-center bg-opacity-100 blur-3xl  rounded-full" onPress={startCapture}>
-          <MaterialCommunityIcons name="record-circle-outline" size={40} color="#00ff1e" />
+          <MaterialCommunityIcons name="record-circle-outline" size={40} color="#06b6d4" />
           </TouchableOpacity>
 
           <TouchableOpacity className="flex-1 self-end items-center bg-opacity-100 blur-3xl  rounded-full" onPress={stopCapture}>
-          <MaterialCommunityIcons name="stop" size={40} color="#00ff1e" />
+          <MaterialCommunityIcons name="stop" size={40} color="#06b6d4" />
           </TouchableOpacity>
 
         </View>
         <View className="flex-row justify-center border-2 border-secondary rounded-lg m-4 h-10">
-          <Text className="text-xl font-bold text-white">
+          <Text className="text-xl font-bold text-t_primary">
             {message}
           </Text>
           

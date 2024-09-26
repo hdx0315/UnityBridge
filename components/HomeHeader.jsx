@@ -14,10 +14,10 @@ const HomeHeader = ({title}) => {
   }
 
   return (
-    <View className="flex-row bg-bprimary justify-between items-center border-b-2 border-green-500 min-h-[40px]">
+    <View className="flex-row bg-bprimary text-t_primary-900 justify-between items-center border-b-2 border-secondary min-h-[40px]">
       
       <View>
-        <Text className="pl-4 pt-4 pb-4 text-xl font-pbold text-white">
+        <Text className="pl-4 pt-4 pb-4 text-xl font-pbold ">
           Unity {title}
         </Text>
       </View>
@@ -28,7 +28,7 @@ const HomeHeader = ({title}) => {
           <Ionicons 
                 name="menu" 
                 size={30} 
-                color="#CDCDE0" 
+                color="#773825" 
                 className="w-6 h-6 ml-auto pr-10" 
                 resizeMode="contain" />
           </MenuTrigger>
@@ -39,7 +39,7 @@ const HomeHeader = ({title}) => {
               borderCurve: 'continuous',
               marginTop:10,
               marginLeft:-20,
-              backgroundColor: '#15803d',
+              backgroundColor: '#B37E62',
               shadowOpacity: 0.3,
               
             },
@@ -52,16 +52,16 @@ const HomeHeader = ({title}) => {
             optionWrapper:{
               borderRadius:10,
               borderBottomWidth:2,
-              borderColor: '#22c55e',
+              borderColor: '#B37E62',
               padding:10
             }
           }}>
 
             <MenuOption 
-                onSelect={() => router.push('pages/profile')} 
+                onSelect={() => router.push('pages/profile')} className=""
                 
             >
-                <Text className="text-white text-lg">
+                <Text className="text-t_primary-400 text-lg">
                     Profile
                 </Text>
             </MenuOption>
@@ -69,7 +69,7 @@ const HomeHeader = ({title}) => {
             <MenuOption 
                 onSelect={() => router.push('settings/appSettings')} 
             >
-                <Text className="text-white bg-green-700 text-lg">
+                <Text className="text-t_primary-400 text-lg">
                     Settings
                 </Text>
             </MenuOption>
@@ -77,7 +77,7 @@ const HomeHeader = ({title}) => {
             <MenuOption 
                 onSelect={handleLogout} 
             >
-                <Text className="text-white text-lg">
+                <Text className="text-t_primary-400 text-lg">
                     Sign Out
                 </Text>
             </MenuOption>

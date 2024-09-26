@@ -15,7 +15,7 @@ const TabIcon = ({color, tname, focused, name, size}) => {
         tintColor={color}
         className='w-6 h-6'/>
       <Text 
-        className={`${focused? 'font-psemibold': 'font-pregular'} text-xs`} 
+        className={`font-psemibold text-xs`} 
         style={{color:color}}
       >
         {tname}
@@ -32,12 +32,10 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: '#00FF1E',
-          tabBarInactiveTintColor: '#CDCDE0',
+          tabBarActiveTintColor: '#F9DCC4',
+          tabBarInactiveTintColor: '#773825',
           tabBarStyle:{
-            backgroundColor: '#052e16',
-            borderTopWidth: 1,
-            borderTopColor: "#052e16",
+            backgroundColor: '#B37E62',
             height: 80
           }
         }}
@@ -120,7 +118,8 @@ const TabsLayout = () => {
 
       
       <StatusBar
-          backgroundColor="#052e16"
+          backgroundColor="#B37E62"
+          
           style='light'
         />
         </MenuProvider>

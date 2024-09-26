@@ -52,7 +52,7 @@ const SignIn = () => {
   }
 
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView className="bg-bprimary text-t_primary h-full">
       <ScrollView>
         <View className="w-full justify-center min-h-[85vh] px-4 my-6">
           <Image
@@ -61,7 +61,7 @@ const SignIn = () => {
             className="w-[100px] h-[100px]"
           />
 
-          <Text className="text-2xl text-white text-semibold mt-10 mb-8 font-psemibold">
+          <Text className="text-2xl text-t_ text-semibold mt-10 mb-8 font-psemibold">
             Log In to UnityBridge
           </Text>
 
@@ -73,7 +73,7 @@ const SignIn = () => {
             otherStyles=""
             keyboardType="email"
           />
-          {errors.email ? <Text className="text-green-500 mt-0 mb-6">{errors.email}</Text> : null}
+          {errors.email ? <Text className=" mt-0 mb-6">{errors.email}</Text> : null}
 
           <FormField
             title="Password"
@@ -83,21 +83,21 @@ const SignIn = () => {
             otherStyles=""
             className=""
           />
-          {errors.password ? <Text className="text-green-500 mt-0 mb-6">{errors.password}</Text> : null}
+          {errors.password ? <Text className=" mt-0 mb-6">{errors.password}</Text> : null}
 
           <CustomButton
             title="Sign In"
             handlePress={submit}
             containerStyles="w-full text-2xl"
-            textStyles="text-black font-psemibold text-xl"
+            textStyles="font-psemibold text-xl"
             isLoading={isSubmitting}
           />
 
           <View className="justify-center pt-5 flex-row gap-2">
-            <Text className="text-lg text-white font-pregular">
+            <Text className="text-lg font-pregular">
               Don't have an account?
             </Text>
-            <Link href='/sign-up' className="text-lg text-secondary font-psemibold">Sign Up</Link>
+            <Link href='/sign-up' className="text-lg text-t_primary-700 font-psemibold">Sign Up</Link>
           </View>
 
         </View>

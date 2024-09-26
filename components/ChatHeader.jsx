@@ -19,7 +19,7 @@ const ChatHeader = ({user}) => {
   };
 
   return (
-    <View className="flex-row bg-bprimary justify-between items-center border-b-2 border-green-500 min-h-[40px] p-4 w-full">
+    <View className="flex-row bg-bprimary text-t_primary justify-between items-center border-b-2 border-secondary min-h-[40px] p-4 w-full">
       <View className="flex-row items-center">
         <View className="pr-4">
           <TouchableOpacity
@@ -28,7 +28,7 @@ const ChatHeader = ({user}) => {
           >
             <AntDesign
              name="arrowleft" 
-             size={24} color="white" 
+             size={24} color="#773825" 
              className="px-4" 
             />
           </TouchableOpacity>
@@ -47,7 +47,7 @@ const ChatHeader = ({user}) => {
             <TouchableOpacity
              onPress={navigateToProfile}
             >
-              <Text className="text-white text-xl ml-4">
+              <Text className="text-t_primary-900 text-xl font-psemibold ml-4">
                 {user?.username}
               </Text>
             </TouchableOpacity>
@@ -61,7 +61,7 @@ const ChatHeader = ({user}) => {
           <MaterialIcons
            name="videocam" 
            size={24} 
-           color="white" 
+           color="#773825" 
           />
         </TouchableOpacity>
 
@@ -69,7 +69,7 @@ const ChatHeader = ({user}) => {
           <MaterialIcons
            name="call" 
            size={24} 
-           color="white" 
+           color="#773825"  
           />
         </TouchableOpacity>
         

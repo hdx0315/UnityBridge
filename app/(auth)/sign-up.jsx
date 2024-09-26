@@ -61,7 +61,7 @@ const SignUp = () => {
   }
 
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView className="bg-bprimary text-t_primary h-full">
 
       <ScrollView>
         <View className="w-full justify-center min-h-[85vh] px-4 my-2">
@@ -71,10 +71,9 @@ const SignUp = () => {
             className="w-[100px] h-[100px]"
           />
 
-          <Text className="text-2xl text-white text-semibold mt-2 font-psemibold mb-8">
+          <Text className="text-2xl text-semibold mt-2 font-psemibold mb-8">
             Sign Up to UnityBridge
           </Text>
-
           <FormField
             title="Username"
             value={form.username}
@@ -82,7 +81,7 @@ const SignUp = () => {
             handleChangeText={(e) => setForm({ ...form, username: e })}
             otherStyles=""
           />
-          {errors.username ? <Text className="text-green-500 mt-0 mb-6">{errors.username}</Text> : null}
+          {errors.username ? <Text className="mt-0 mb-6">{errors.username}</Text> : null}
 
           <FormField
             title="Email"
@@ -92,7 +91,7 @@ const SignUp = () => {
             otherStyles=""
             keyboardType="email-address"
           />
-          {errors.email ? <Text className="text-green-500 mt-0 mb-6">{errors.email}</Text> : null}
+          {errors.email ? <Text className=" mt-0 mb-6">{errors.email}</Text> : null}
 
           <FormField
             title="Password"
@@ -101,7 +100,7 @@ const SignUp = () => {
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles=""
           />
-          {errors.password ? <Text className="text-green-500 mt-0 mb-6">{errors.password}</Text> : null}
+          {errors.password ? <Text className=" mt-0 mb-6">{errors.password}</Text> : null}
 
           <CustomButton
             title="Register"
@@ -112,10 +111,10 @@ const SignUp = () => {
           />
 
           <View className="justify-center pt-5 flex-row gap-2">
-            <Text className="text-lg text-white font-pregular">
+            <Text className="text-lg font-pregular">
               Already have an account?
             </Text>
-            <Link href='/sign-in' className="text-lg text-secondary font-psemibold">Sign In</Link>
+            <Link href='/sign-in' className="text-lg text-t_primary-700 font-psemibold">Sign In</Link>
           </View>
 
         </View>

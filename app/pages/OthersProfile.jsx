@@ -24,7 +24,7 @@ const OthersProfile = ({profilePic, name, email}) => {
               <AntDesign 
                 name="arrowleft" 
                 size={24} 
-                color="white" 
+                color="#773825" 
                 className="px-4" 
               />
         </TouchableOpacity>
@@ -35,23 +35,23 @@ const OthersProfile = ({profilePic, name, email}) => {
             className="w-60 h-60 rounded-full"
           />
 
-          <Text className="text-secondary text-3xl pt-12 font-pbold">
+          <Text className="text-t_primary-900 text-3xl pt-12 font-pbold">
             {/* {name} */}
             Contact Username
           </Text>
         </View>
 
-        <View className="pl-8">
-          <Text className="text-white font-bold text-lg pt-8">
+        <View className="pl-8 text-black">
+          <Text className="font-bold text-lg pt-8">
             email
           </Text>
-          <Text className="text-gray-300 text-lg pt-2 pl-4">
+          <Text className=" text-lg pt-2 pl-4">
             email@example.com
           </Text>
-          <Text className="text-white font-bold text-lg pt-8">
+          <Text className="font-bold text-lg pt-8">
             Phone number
           </Text>
-          <Text className="text-gray-300 text-lg pt-2 pl-4">
+          <Text className="text-lg pt-2 pl-4">
             Phone number
           </Text>
         </View>

@@ -75,7 +75,7 @@ export default function App() {
   if (!permission.granted) {
     // Camera permissions are not granted yet.
     return (
-      <View className="flex-1 justify-center bg-primary px-2">
+      <View className="flex-1 justify-center bg-bprimary px-2">
         <Text className="text-center pb-2.5 text-secondary text-2xl">We need your permission to access the camera</Text>
         <View className="flex-row justify-center my-4">
         <Pressable  onPress={requestPermission} className="items-center justify-center py-3 px-8 rounded-full max-w-[300px] bg-secondary p-6">
