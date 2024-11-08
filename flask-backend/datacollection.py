@@ -7,7 +7,7 @@ import time
 cap =  cv2.VideoCapture(0)
 detector = HandDetector(maxHands=1) #meken krnne maximum hands kiyak detect krgnna puluwanda kiyna eka denwa code ekn
 
-offset = 25
+offset = 25                     
 imgSize = 300
 
 folder = "F:/intern projecrts/tensorflow + node-express api backend practice project/backend/models/data/space"
