@@ -74,4 +74,4 @@ const NewChatItem = ({ item, router, noBorder, currentUser }) => {
 }
 
 
-export default newChatItem
+export default NewChatItem
