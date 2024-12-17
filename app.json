@@ -13,7 +13,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "This app needs access to speech recognition to convert your speech to text",
+        "NSMicrophoneUsageDescription": "This app needs access to your microphone for speech recognition"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -22,8 +26,13 @@
       },
       "permissions": [
         "CAMERA",
-        "RECORD_AUDIO"
-      ]
+        "RECORD_AUDIO",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.INTERNET",
+        "AUDIO_RECORDING",
+        "android.permission.CAMERA"
+      ],
+      "package": "com.hdx0315.UnityBridge"
     },
     "web": {
       "bundler": "metro",
@@ -39,10 +48,25 @@
           "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
           "recordAudioAndroid": true
         }
+      ],
+      [
+        "@react-native-voice/voice",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone for speech recognition",
+          "speechRecognitionPermission": "Allow $(PRODUCT_NAME) to access speech recognition"
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f1fd79ea-6542-4e6e-95ca-315fef9052c6"
+      }
     }
   }
 }
