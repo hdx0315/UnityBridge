@@ -3,11 +3,15 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants';
 import CustomButton from '../../components/CustomButton';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 
 // get user profile information from database
 
 const profile = ({profilePic, name, email}) => {
+
+
+  const user = useLocalSearchParams()
+  console.log(user)
 
   return (
     <SafeAreaView>
@@ -18,27 +22,33 @@ const profile = ({profilePic, name, email}) => {
             source={images.profile}
             className="w-60 h-60 rounded-full"
           />
-          <Text className="text-secondary text-3xl pt-12 font-pbold">
-            {/* {name} */}
-            Your Username
+          <Text className="text-secondary-800 text-3xl pt-12 font-pbold">
+            {user.username}
+            
           </Text>
         </View>
 
         <View className="pl-4 text-t_primary">
           <Text className=" font-bold text-lg pt-8">
-            email
+            Username
           </Text>
           <Text className="t text-lg pt-2 pl-4">
-            email@example.com
+            {user.username}
           </Text>
-          <Text className="font-bold text-lg pt-8">
-            Phone number
+          <Text className=" font-bold text-lg pt-8">
+            e-mail
           </Text>
-          <Text className=" text-lg pt-2 pl-4">
-            Phone number
+          <Text className="t text-lg pt-2 pl-4">
+            {user.email}
+          </Text>
+          <Text className=" font-bold text-lg pt-8">
+            User ID
+          </Text>
+          <Text className="t text-lg pt-2 pl-4">
+            {user.userId}
           </Text>
         </View>
-
+{/*
         <View className="pt-4 flex-row justify-center">
           <CustomButton
             title="Edit Your Profile"
@@ -46,7 +56,7 @@ const profile = ({profilePic, name, email}) => {
             textStyles="pl-6 pr-6"
             handlePress={()=>router.push('settings/profileSettings')}
           />
-        </View>
+        </View>*/}
       </View>
     </SafeAreaView>
   )

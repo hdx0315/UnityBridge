@@ -7,6 +7,8 @@ export const useUserStore = create((set) => ({
   name: '',
   profilePic: null,
   setNameAndProfilePic: (name, profilePic) => set({ name, profilePic }),
+  // Optional: method to update profile pic
+  updateProfilePic: (profilePic) => set({ profilePic }),
 }));
 
 // Store for call information
