@@ -1,12 +1,12 @@
+
+
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { images } from '../constants';
 import { formatDate, getRoomId } from '../utils/common' 
 import { collection, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db } from '../lib/firebase';
-
 import proPics from '../constants/proPic';
-
 
 const ChatItem = ({ item, router, noBorder, currentUser }) => {
     const [lastMessage, setLastMessage] = useState(undefined)
@@ -24,14 +24,24 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
             setLastMessage(allMessages[0] ? allMessages[0] : null)
         })
 
-
         return unsub;
     }, [])
 
-//    console.log('last message', lastMessage)
+    // Select a profile pic, either from proPics or user's actual profile pic
+    const profilePic = item.profilePic || 
+    proPics[Math.floor(Math.random() * proPics.length)];
 
     const openChatRoom = () => {
-        router.push({pathname: 'pages/InboxChat', params: item})
+        
+        router.push({ 
+            pathname: 'pages/InboxChat', 
+            params: { 
+                ...item, 
+                profilePic 
+            } 
+        });
+
+        console.log("in chbat items", item, profilePic)
     }
 
     const renderTime = () => {
@@ -51,18 +61,19 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
             return 'Say Hi!!!'
         }
     }
-    
-    const proPic = proPics[Math.floor(Math.random() * proPics.length)];
 
+    // Select a profile pic
+//    const proPic = item.profilePic || 
+  //      proPics[Math.floor(Math.random() * proPics.length)];
 
     return (
-        lastMessage?(
+        lastMessage ? (
         <TouchableOpacity
             className={`pt-4 pb-4 flex-row items-center ${noBorder ? "" : 'border-b-2 border-secondary'}`}
             onPress={openChatRoom}
         >
             <Image
-                source={proPic}
+                source={profilePic}
                 resizeMode="contain"
                 className="w-[50px] h-[50px] ml-2 rounded-full"
             />
@@ -78,8 +89,8 @@ const ChatItem = ({ item, router, noBorder, currentUser }) => {
                 </Text>
             </View>
         </TouchableOpacity>
-        ): null
-    ) ;
+        ) : null
+    );
 };
 
 export default ChatItem;
