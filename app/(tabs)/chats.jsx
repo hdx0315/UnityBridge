@@ -12,6 +12,7 @@ import { useChatStore } from '../../stores/userStore'; // Import Zustand store
 
 const Chats = () => {
   const { user } = useAuthContext();
+  const username = user?.username;
   const [loading, setLoading] = useState(true);
 
   // Zustand store for users and chats
@@ -54,12 +55,12 @@ const Chats = () => {
   return (
     <SafeAreaView className="flex-1 bg-bprimary">
       <View>
-        <HomeHeader title="Chats" />
+        <HomeHeader title="Chats" user={user}/>
       </View>
       <ScrollView className="flex-1 bg-bprimary">
         {loading ? (
           <View className="flex-1 items-center justify-center">
-            <ActivityIndicator size="large" />
+            <ActivityIndicator size="large"/>
           </View>
         ) : (
           <ChatList users={users} currentUser={user} />
