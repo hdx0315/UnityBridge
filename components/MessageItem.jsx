@@ -6,8 +6,8 @@ const MessageItem = ({message, currentUser}) => {
         return (
             <View className='flex-row justify-end mb-2 mr-1'>
                 <View className='w-4/5'>
-                <View className='flex self-end p-3 rounded-lg bg-secondary'>
-                <Text className="text-t_primary text-lg">{message.text}</Text>
+                <View className='flex self-end p-3 rounded-lg bg-secondary-700'>
+                <Text className="text-white text-lg">{message.text}</Text>
                 {/* test line */}
                 </View>
                 </View>
