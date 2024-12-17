@@ -1,5 +1,5 @@
 
-import { View, Text, ScrollView, TextInput, Button, KeyboardAvoidingView, TouchableOpacity, Keyboard, Alert } from 'react-native';
+import { View, Text, ScrollView, TextInput, Button,ImageBackground , KeyboardAvoidingView, TouchableOpacity, Keyboard, Alert } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ChatHeader from '../../components/ChatHeader';
@@ -172,7 +172,11 @@ const InboxChat = () => {
 
   return (
     <SafeAreaView className="flex-1">
-
+      <ImageBackground 
+        source={require('../../assets/images/background2.jpeg')} // Replace with your image path
+        style={{ flex: 1 }}
+        resizeMode="cover"
+      >
 <View>
     <ChatHeader 
         user={item} 
@@ -251,6 +255,7 @@ const InboxChat = () => {
 
         </View>
       </KeyboardAvoidingView>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
