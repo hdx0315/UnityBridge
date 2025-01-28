@@ -6,11 +6,20 @@ import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuthContext } from '../contexts/AuthContext';
 
-const HomeHeader = ({title}) => {
+const HomeHeader = ({title, user}) => {
   const { logout } = useAuthContext()
   
   const handleLogout = async () => {
     await logout()
+  }
+
+  const handleProfile = () =>{
+    router.push({
+      pathname:'pages/profile',
+      params:{
+        ...user
+      }
+    })
   }
 
   return (
@@ -58,14 +67,14 @@ const HomeHeader = ({title}) => {
           }}>
 
             <MenuOption 
-                onSelect={() => router.push('pages/profile')} className=""
+                onSelect={handleProfile} className=""
                 
             >
                 <Text className="text-t_primary-400 text-lg">
                     Profile
                 </Text>
             </MenuOption>
-
+{/*
             <MenuOption 
                 onSelect={() => router.push('settings/appSettings')} 
             >
@@ -73,7 +82,7 @@ const HomeHeader = ({title}) => {
                     Settings
                 </Text>
             </MenuOption>
-
+*/}
             <MenuOption 
                 onSelect={handleLogout} 
             >
