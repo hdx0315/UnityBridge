@@ -1,13 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./lib/**/*.{js,jsx,ts,tsx}",
+    "./*.{js,jsx,ts,tsx}"
+  ],
+  presets: [require("nativewind/preset")],
   theme: {
     extend: {
       colors: {
-       // primary: "#bde0fe",
-
         bprimary: {
-          DEFAULT:"#fff6e8",
+          DEFAULT: "#fff6e8",
           100: "#FEFBF3",
           200: "#FEF6E8",
           300: "#FDEFDC",
@@ -18,7 +22,6 @@ module.exports = {
           800: "#90563E",
           900: "#773825",
         },
-
         secondary: {
           DEFAULT: "#F9DCC4",
           100: "#FEFBF3",
@@ -31,7 +34,6 @@ module.exports = {
           800: "#90563E",
           900: "#773825",
         },
-
         t_primary: {
           DEFAULT: "#000",
           100: "#FEFBF3",
@@ -47,8 +49,6 @@ module.exports = {
         t_secondary: {
           DEFAULT: "#06b6d4",
         },
-
-
         col_important: {
           DEFAULT: "#00c9aa",
         },
@@ -62,20 +62,17 @@ module.exports = {
         },
       },
       fontFamily: {
-        pthin: ["Poppins-Thin", "sans-serif"],
-        pextralight: ["PoppBins-ExtraLight", "sans-serif"],
-        plight: ["Poppins-Light", "sans-serif"],
-        pregular: ["Poppins-Regular", "sans-serif"],
-        pmedium: ["Poppins-Medium", "sans-serif"],
-        psemibold: ["Poppins-SemiBold", "sans-serif"],
-        pbold: ["Poppins-Bold", "sans-serif"],
-        pextrabold: ["Poppins-ExtraBold", "sans-serif"],
-        pblack: ["Poppins-Black", "sans-serif"],
+        pthin: ["Poppins-Thin"],
+        pextralight: ["Poppins-ExtraLight"],
+        plight: ["Poppins-Light"],
+        pregular: ["Poppins-Regular"],
+        pmedium: ["Poppins-Medium"],
+        psemibold: ["Poppins-SemiBold"],
+        pbold: ["Poppins-Bold"],
+        pextrabold: ["Poppins-ExtraBold"],
+        pblack: ["Poppins-Black"],
       },
     },
   },
   plugins: [],
-  corePlugin: {
-    backgroundOpacity: true,
-  },
 };

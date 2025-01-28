@@ -4,7 +4,9 @@ import { Stack, useRouter, useSegments } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import { AuthProvider, useAuthContext } from '../contexts/AuthContext'
+import { AuthProvider, useAuthContext } from '../contexts/AuthContext';
+import { View } from 'react-native';
+import "../global.css";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -17,6 +19,7 @@ const MainLayout = () => {
   useEffect(() => {
     if (typeof isAuthenticated === 'undefined') return;
     const inApp = segments[0] === '(tabs)';
+    
     if (isAuthenticated && !inApp) {
       router.replace('/(tabs)/chats');
     } else if (isAuthenticated === false) {
@@ -25,38 +28,24 @@ const MainLayout = () => {
   }, [isAuthenticated]);
 
   return (
-    <Stack>
-      <Stack.Screen
-        name='index'
-        options={{ headerShown: false }}
-      />
-
-      <Stack.Screen
-        name='(auth)'
-        options={{ headerShown: false }}
-      />
-
-      <Stack.Screen
-        name='(tabs)'
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name='settings'
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name='pages'
-        options={{ headerShown: false }}
-      />
-      {/* <Stack.Screen name='/search/[query]' 
-      options={{headerShown:false}}/> */}
-    </Stack>
-  )
-}
-
+    <View style={{ flex: 1 }}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          animation: 'fade',
+        }}
+      >
+        <Stack.Screen name='index' />
+        <Stack.Screen name='(auth)' />
+        <Stack.Screen name='(tabs)' />
+        <Stack.Screen name='settings' />
+        <Stack.Screen name='pages' />
+      </Stack>
+    </View>
+  );
+};
 
 const RootLayout = () => {
-
   const [fontsLoaded, error] = useFonts({
     "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
@@ -71,7 +60,6 @@ const RootLayout = () => {
 
   useEffect(() => {
     if (error) throw error;
-
     if (fontsLoaded) {
       SplashScreen.hideAsync();
     }
@@ -85,7 +73,7 @@ const RootLayout = () => {
     <AuthProvider>
       <MainLayout />
     </AuthProvider>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

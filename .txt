@@ -1,0 +1,215 @@
+part 4
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:73939:11: warning: the variable "cancelAnimationFrame" was not declared in function "cleanup"
+          cancelAnimationFrame(this.splashScreenAnimationFrame);
+          ^~~~~~~~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:80698:20: warning: the variable "localStorage" was not declared in function "ColorSchemeStore"
+        if (typeof localStorage !== "undefined") {
+                   ^~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:80701:13: warning: the variable "document" was not declared in function "ColorSchemeStore"
+            document.documentElement.classList.add("dark");
+            ^~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:110235:29: warning: the variable "IDBDatabase" was not declared in function "getMethod"
+    if (!(target instanceof IDBDatabase && !(prop in target) && typeof prop =...
+                            ^~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:110244:37: warning: the variable "IDBIndex" was not declared in function "getMethod"
+    !(targetFuncName in (useIndex ? IDBIndex : IDBObjectStore).prototype) || ...
+                                    ^~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:110244:48: warning: the variable "IDBObjectStore" was not declared in function "getMethod"
+...ame in (useIndex ? IDBIndex : IDBObjectStore).prototype) || !(isWrite || r...
+                                 ^~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:110298:94: warning: the variable "IDBCursor" was not declared in function "getIdbProxyableTypes"
+...abase, IDBObjectStore, IDBIndex, IDBCursor, IDBTransaction]);
+                                    ^~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:110298:105: warning: the variable "IDBTransaction" was not declared in function "getIdbProxyableTypes"
+...ctStore, IDBIndex, IDBCursor, IDBTransaction]);
+                                 ^~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:110353:32: warning: the variable "DOMException" was not declared in function "error 2#"
+        reject(tx.error || new DOMException('AbortError', 'AbortError'));
+                               ^~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:110445:26: warning: the variable "IDBRequest" was not declared in function "wrap 1#"
+    if (value instanceof IDBRequest) return promisifyRequest(value);
+                         ^~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:159572:100: warning: the variable "location" was not declared in function "registerSensor 1#"
+...(0, _PlatformChecker.isWeb)() && location.protocol !== 'https:' ? ' Make s...
+                                    ^~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:160838:26: warning: Direct call to eval(), but lexical scope is not supported.
+            workletFun = eval('(' + initData.code + '\n)');
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:160861:112: warning: the variable "_toString" was not declared in function "valueUnpacker"
+...recognized by value unpacker: "${_toString(objectToUnpack)}".`);
+                                    ^~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:161715:11: warning: the variable "queueMicrotask" was not declared in anonymous function " 5507#"
+          queueMicrotask(function () {
+          ^~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:161841:33: warning: the variable "_WORKLET" was not declared in function "runOnJS"
+      if (SHOULD_BE_USE_WEB || !_WORKLET) {
+                                ^~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:178622:26: warning: the variable "structuredClone" was not declared in function "createAnimationWithExistingTransform"
+      newAnimationData = structuredClone(_config.AnimationsData[animationName]);
+                         ^~~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:178916:27: warning: the variable "HTMLElement" was not declared in function "findDescendantWithExitingAnimation"
+    if (!(node instanceof HTMLElement)) {
+                          ^~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:178942:24: warning: the variable "MutationObserver" was not declared in function "addHTMLMutationObserver"
+    var observer = new MutationObserver(function (mutationsList) {
+                       ^~~~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:178991:41: warning: the variable "getComputedStyle" was not declared in function "fixElementPosition"
+...entBorderTopValue = parseInt(getComputedStyle(parent).borderTopWidth);
+                                ^~~~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:183347:5: warning: the variable "jest" was not declared in function "beforeTest"
+    jest.useFakeTimers();
+    ^~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:183883:26: warning: the variable "_getAnimationTimestamp" was not declared in function "computeEasingProgress"
+      var elapsedTime = (_getAnimationTimestamp() - startingTimestamp) / 1000;
+                         ^~~~~~~~~~~~~~~~~~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:191667:76: warning: the variable "Buffer" was not declared in function "convertValue 1#"
+... 'function' ? new Blob([value]) : Buffer.from(value);
+                                     ^~~~~~
+/home/expo/workingdir/build/android/app/build/generated/assets/createBundleReleaseJsAndAssets/index.android.bundle:198476:16: warning: the variable "SharedArrayBuffer" was not declared in function "from 2#"
+    if (typeof SharedArrayBuffer !== 'undefined' && (isInstance(value, Shared...
+               ^~~~~~~~~~~~~~~~~
+> Task :expo-permissions:mergeReleaseJniLibFolders
+> Task :expo-permissions:mergeReleaseNativeLibs NO-SOURCE
+> Task :expo-permissions:copyReleaseJniLibsProjectOnly
+> Task :expo-speech:mergeReleaseJniLibFolders
+> Task :expo-speech:mergeReleaseNativeLibs NO-SOURCE
+> Task :expo-speech:copyReleaseJniLibsProjectOnly
+> Task :expo-splash-screen:mergeReleaseJniLibFolders
+> Task :expo-splash-screen:mergeReleaseNativeLibs NO-SOURCE
+> Task :expo-splash-screen:copyReleaseJniLibsProjectOnly
+> Task :expo-system-ui:mergeReleaseJniLibFolders
+> Task :expo-system-ui:mergeReleaseNativeLibs NO-SOURCE
+> Task :expo-system-ui:copyReleaseJniLibsProjectOnly
+> Task :expo-web-browser:mergeReleaseJniLibFolders
+> Task :expo-web-browser:mergeReleaseNativeLibs NO-SOURCE
+> Task :expo-web-browser:copyReleaseJniLibsProjectOnly
+> Task :react-native-async-storage_async-storage:mergeReleaseJniLibFolders
+> Task :react-native-async-storage_async-storage:mergeReleaseNativeLibs NO-SOURCE
+> Task :react-native-async-storage_async-storage:copyReleaseJniLibsProjectOnly
+> Task :react-native-gesture-handler:mergeReleaseJniLibFolders
+> Task :react-native-gesture-handler:mergeReleaseNativeLibs NO-SOURCE
+> Task :react-native-gesture-handler:copyReleaseJniLibsProjectOnly
+> Task :react-native-permissions:mergeReleaseJniLibFolders
+> Task :react-native-permissions:mergeReleaseNativeLibs NO-SOURCE
+> Task :react-native-permissions:copyReleaseJniLibsProjectOnly
+> Task :expo-modules-core:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :expo-modules-core:compileReleaseJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+> Task :expo-modules-core:bundleLibCompileToJarRelease
+> Task :expo-av:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :expo-asset:compileReleaseKotlin
+> Task :react-native-reanimated:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :expo-asset:compileReleaseJavaWithJavac
+> Task :expo-asset:bundleLibCompileToJarRelease
+> Task :expo-constants:compileReleaseKotlin
+> Task :expo-constants:compileReleaseJavaWithJavac
+> Task :expo-constants:bundleLibCompileToJarRelease
+> Task :app:generateCodegenSchemaFromJavaScript SKIPPED
+> Task :app:generateCodegenArtifactsFromSchema SKIPPED
+> Task :app:generatePackageList
+> Task :app:preBuild
+> Task :app:preReleaseBuild
+> Task :app:generateReleaseResValues
+> Task :expo-av:compileReleaseKotlin
+w: file:///home/expo/workingdir/build/node_modules/expo-av/android/src/main/java/expo/modules/av/ViewUtils.kt:10:26 'Promise' is deprecated. AsyncFunction will crash when called. Use expo.modules.kotlin.Promise instead
+w: file:///home/expo/workingdir/build/node_modules/expo-av/android/src/main/java/expo/modules/av/ViewUtils.kt:19:129 'Promise' is deprecated. AsyncFunction will crash when called. Use expo.modules.kotlin.Promise instead
+w: file:///home/expo/workingdir/build/node_modules/expo-av/android/src/main/java/expo/modules/av/ViewUtils.kt:21:78 'resolveView(Int): View?' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-av/android/src/main/java/expo/modules/av/ViewUtils.kt:39:111 'Promise' is deprecated. AsyncFunction will crash when called. Use expo.modules.kotlin.Promise instead
+w: file:///home/expo/workingdir/build/node_modules/expo-av/android/src/main/java/expo/modules/av/ViewUtils.kt:52:78 'resolveView(Int): View?' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-av/android/src/main/java/expo/modules/av/player/datasource/CustomHeadersOkHttpDataSourceFactory.kt:32:12 'constructor OkHttpDataSource(Call.Factory, String?, CacheControl?, HttpDataSource.RequestProperties?)' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-av/android/src/main/java/expo/modules/av/progress/AndroidLooperTimeMachine.kt:8:5 'constructor Handler()' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-av/android/src/main/java/expo/modules/av/video/VideoViewModule.kt:64:17 'tryRunWithVideoView(ModuleRegistry, Int, ViewUtils.VideoViewCallback, Promise): Unit' is deprecated. Use `dispatchCommands` in favor of finding view with imperative calls
+> Task :expo-av:compileReleaseJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:generateReleaseResources
+> Task :expo-av:bundleLibCompileToJarRelease
+> Task :expo-font:compileReleaseKotlin
+> Task :expo-font:compileReleaseJavaWithJavac
+> Task :expo-font:bundleLibCompileToJarRelease
+> Task :expo-file-system:compileReleaseKotlin
+> Task :expo-file-system:compileReleaseJavaWithJavac
+> Task :expo-file-system:bundleLibCompileToJarRelease
+> Task :expo-intent-launcher:compileReleaseKotlin
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease
+> Task :expo-keep-awake:compileReleaseKotlin
+> Task :expo-intent-launcher:compileReleaseJavaWithJavac
+> Task :expo-intent-launcher:bundleLibCompileToJarRelease
+> Task :expo-keep-awake:compileReleaseJavaWithJavac
+> Task :app:processReleaseMainManifest
+/home/expo/workingdir/build/android/app/src/main/AndroidManifest.xml Warning:
+	provider#expo.modules.filesystem.FileSystemFileProvider@android:authorities was tagged at AndroidManifest.xml:0 to replace other declarations but no other declaration present
+> Task :expo-keep-awake:bundleLibCompileToJarRelease
+> Task :app:processReleaseManifest
+> Task :app:processApplicationManifestReleaseForBundle
+> Task :app:checkReleaseAarMetadata
+> Task :app:packageReleaseResources
+> Task :app:parseReleaseLocalResources
+> Task :app:processReleaseManifestForPackage
+> Task :expo-camera:compileReleaseKotlin
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt:338:15 'setTargetResolution(Size): ImageCapture.Builder' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/ExpoCameraView.kt:467:73 'getter for defaultDisplay: Display!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/CameraViewHelper.kt:30:36 'get(Int, Int): CamcorderProfile!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/CameraViewHelper.kt:32:49 'get(Int, Int): CamcorderProfile!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/CameraViewHelper.kt:33:49 'get(Int, Int): CamcorderProfile!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/CameraViewHelper.kt:34:48 'get(Int, Int): CamcorderProfile!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/CameraViewHelper.kt:35:48 'get(Int, Int): CamcorderProfile!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/CameraViewHelper.kt:37:36 'get(Int, Int): CamcorderProfile!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/CameraViewLegacyModule.kt:81:85 'execute(vararg Void?): AsyncTask<Void?, Void?, Bundle?>!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/ExifTags.kt:71:32 'TAG_ISO_SPEED_RATINGS: String' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/ExpoCameraView.kt:205:73 'getter for defaultDisplay: Display!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/ExpoCameraView.kt:400:89 'execute(vararg Void?): AsyncTask<Void?, Void?, Bundle?>!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/ExpoCameraView.kt:419:113 'execute(vararg Void?): AsyncTask<Void?, Void?, BarCodeScannerResult?>!' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/BarCodeScannerAsyncTask.kt:3:19 'AsyncTask<Params : Any!, Progress : Any!, Result : Any!>' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/BarCodeScannerAsyncTask.kt:15:5 'AsyncTask<Params : Any!, Progress : Any!, Result : Any!>' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/BarCodeScannerAsyncTask.kt:15:5 'constructor AsyncTask<Params : Any!, Progress : Any!, Result : Any!>()' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/BarCodeScannerAsyncTask.kt:16:60 'getter for isCancelled: Boolean' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/BarCodeScannerAsyncTask.kt:23:11 'onPostExecute(Result!): Unit' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/FaceDetectorTask.kt:27:9 Parameter 'error' is never used, could be renamed to _
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/FaceDetectorTask.kt:31:9 Parameter 'skippedReason' is never used, could be renamed to _
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/ResolveTakenPictureAsyncTask.kt:8:19 'AsyncTask<Params : Any!, Progress : Any!, Result : Any!>' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/ResolveTakenPictureAsyncTask.kt:47:5 'AsyncTask<Params : Any!, Progress : Any!, Result : Any!>' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/ResolveTakenPictureAsyncTask.kt:47:5 'constructor AsyncTask<Params : Any!, Progress : Any!, Result : Any!>()' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/ResolveTakenPictureAsyncTask.kt:123:32 Type mismatch: inferred type is String? but String was expected
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/ResolveTakenPictureAsyncTask.kt:155:30 Type mismatch: inferred type is String? but String was expected
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/legacy/tasks/ResolveTakenPictureAsyncTask.kt:191:11 'onPostExecute(Result!): Unit' is deprecated. Deprecated in Java
+w: file:///home/expo/workingdir/build/node_modules/expo-camera/android/src/main/java/expo/modules/camera/tasks/ResolveTakenPicture.kt:129:32 Type mismatch: inferred type is String? but String was expected
+> Task :expo-permissions:compileReleaseKotlin FAILED
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsModule.kt:18:26 Unresolved reference: ExportedModule
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsModule.kt:21:37 Unresolved reference: ExpoMethod
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsModule.kt:25:45 Unresolved reference: ExportedModule
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsModule.kt:30:3 'onCreate' overrides nothing
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsModule.kt:34:55 Unresolved reference: context
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsModule.kt:71:3 'getName' overrides nothing
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsModule.kt:73:4 Unresolved reference: ExpoMethod
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsModule.kt:82:4 Unresolved reference: ExpoMethod
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsPackage.kt:6:26 Unresolved reference: ExportedModule
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsPackage.kt:13:3 'createExportedModules' overrides nothing
+e: file:///home/expo/workingdir/build/node_modules/expo-permissions/android/src/main/java/expo/modules/permissions/PermissionsPackage.kt:13:67 Unresolved reference: ExportedModule
+> Task :expo-speech:compileReleaseKotlin
+w: file:///home/expo/workingdir/build/node_modules/expo-speech/android/src/main/java/expo/modules/speech/SpeechModule.kt:153:26 This declaration overrides deprecated member but not marked as deprecated itself. Please add @Deprecated annotation or suppress. See https://youtrack.jetbrains.com/issue/KT-47902 for details
+> Task :expo-camera:compileReleaseJavaWithJavac
+> Task :app:mergeReleaseResources
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+403 actionable tasks: 403 executed
+FAILURE: Build failed with an exception.
+* What went wrong:
+Execution failed for task ':expo-permissions:compileReleaseKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+BUILD FAILED in 3m 47s
+Error: Gradle build failed with unknown error. See logs for the "Run gradlew" phase for more information.

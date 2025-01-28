@@ -143,3 +143,6 @@ dist
 
 expo-env.d.ts
 # @end expo-cli
+CustomModel.h5
+CustomModel2.h5
+CustomModel.h5
