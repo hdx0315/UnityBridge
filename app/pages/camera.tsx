@@ -29,7 +29,7 @@ export default function App() {
 
   const sendImageToBackend = async (image:any) => {
     try {
-      const response = await axios.post('http://192.168.1.2:5001/process' , {image});
+      const response = await axios.post('http://192.168.1.4:5001/process' , {image});
       setCharacter(response.data.character);
       setMessage((prevMsg) => prevMsg + response.data.character);
       console.log(message + character)
