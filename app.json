@@ -57,15 +57,17 @@
         }
       ]
     ],
-    "experiments": {
-      "typedRoutes": true
-    },
-    "extra": {
-      "router": {
-        "origin": false
-      },
       "eas": {
         "projectId": "f1fd79ea-6542-4e6e-95ca-315fef9052c6"
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "tsconfigPaths": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
       }
     }
   }
