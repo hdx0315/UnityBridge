@@ -8,8 +8,8 @@ const MessageItem = ({ message, currentUser }) => {
     return (
       <View testID="message-container" style={{ flexDirection: 'row', justifyContent: 'flex-end', marginBottom: 8, marginRight: 4 }}>
         <View style={{ width: '80%' }}>
-          <View style={{ alignSelf: 'flex-end', padding: 12, borderRadius: 10, backgroundColor: '#FFD700' }}>
-            <Text style={{ color: '#000', fontSize: 16 }}>{message.text}</Text>
+          <View style={{ alignSelf: 'flex-end', padding: 12, borderRadius: 10, backgroundColor: '#B37E62' }}>
+            <Text style={{ color: '#FFF', fontSize: 16 }}>{message.text}</Text>
           </View>
         </View>
       </View>
